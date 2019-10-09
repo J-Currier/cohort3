@@ -17,6 +17,8 @@ const functions = {
     },
 
     
+
+    
 // sample if / else
 
     ifElse: (b) => {
@@ -25,14 +27,40 @@ const functions = {
         } else {
             return false;
         }
-    }
+    },
 // functions
 // parameters
 // returns
+funcTest: (a, b) => {
+    return (a + b);
+},
+
 // arrays
-// add to the front
 // add to the end
+arrayTest: (a) => {
+    let myArray = [];
+    myArray.push(a);
+    console.log(myArray);
+    return myArray[myArray.length - 1];
+},
+
+
+// add to the front
+arrayTestFront: (a) => {
+    let myArray = [];
+    myArray.unshift(a);
+    console.log(myArray);
+    return myArray[myArray.length - 1];
+},
+
 // update values
+arrayUpdate: (num, position) => {
+    let myArray = [1, 2, 3, 4, 5];
+    myArray[position - 1] = num;
+
+    return myArray[position - 1];
+},
+
 // loops 
 // for
 // for/in

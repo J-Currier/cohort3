@@ -14,7 +14,7 @@ test('variable type', () => {
 });
 
 // sample if / else
-test('variable type', () => {
+test('ifelse', () => {
     expect(functions.ifElse(1)).toBe(true); // Consider the edge cases
     expect(functions.ifElse(10)).toBe(false);
     
@@ -23,10 +23,36 @@ test('variable type', () => {
 // functions
 // parameters
 // returns
+test('functions', () => {
+    expect(functions.funcTest(1, 4)).toBe(5); // Consider the edge cases
+    expect(functions.funcTest("b", "a")).toBe("ba");
+    
+});
+
+
 // arrays
+// add to the back
+test('arraysback', () => {
+    expect(functions.arrayTest(7)).toBe(7); // Consider the edge cases
+    
+    
+});
 // add to the front
-// add to the end
+
+test('arraysfront', () => {
+    expect(functions.arrayTestFront(5)).toBe(5); // Consider the edge cases
+    
+    
+});
+
+
 // update values
+test('arraysUpdate Values', () => {
+    expect(functions.arrayUpdate(8, 3)).toBe(8); // Consider the edge cases
+    
+    
+});
+
 // loops 
 // for
 // for/in
