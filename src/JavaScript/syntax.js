@@ -61,9 +61,26 @@ arrayUpdate: (num, position) => {
     return myArray[position - 1];
 },
 
+
+
+
 // loops 
 // for
+myForLoop: (myForLoopVar) => {
+    let myForLoopArray = [];
+    let sum = 0;
+    for (let i = 0; i < myForLoopVar; i += 2) {
+        myForLoopArray.push(i);
+        console.log(myForLoopArray);
+        sum = myForLoopArray.reduce((cur, acc) => (acc + cur));
+        
+    };
+    return sum;
+},
 // for/in
+forInFunction: (forInInput) => {
+    console.log("do something");
+},
 // while
 // do while
 // forEach (with array and function)
