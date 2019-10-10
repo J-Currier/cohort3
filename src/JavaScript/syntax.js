@@ -115,7 +115,8 @@ forInFunction: (forInInput) => {
     
 // forEach array
     forEachFunc: (forEachInput) => {
-        console.log(9);
+        let forArray = forEachInput;
+        forArray.forEach( )
     },
 // forEach function
 // Objects / Dictionaries
