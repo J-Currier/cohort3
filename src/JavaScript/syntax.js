@@ -30,65 +30,65 @@ const functions = {
 // functions
 // parameters
 // returns
-funcTest: (a, b) => {
-    return (a + b);
-},
+    funcTest: (a, b) => {
+        return (a + b);
+    },
 
 // arrays
 // add to the end
-arrayTest: (a) => {
-    let myArray = [];
-    myArray.push(a);
-    return myArray[myArray.length - 1];
-},
+    arrayTest: (a) => {
+        let myArray = [];
+        myArray.push(a);
+        return myArray[myArray.length - 1];
+    },
 
 
 // add to the front
-arrayTestFront: (a) => {
-    let myArray = [];
-    myArray.unshift(a);
-    return myArray[myArray.length - 1];
-},
+    arrayTestFront: (a) => {
+        let myArray = [];
+        myArray.unshift(a);
+        return myArray[myArray.length - 1];
+    },
 
 // update values
-arrayUpdate: (num, position) => {
-    let myArray = [1, 2, 3, 4, 5];
-    myArray[position - 1] = num;
+    arrayUpdate: (num, position) => {
+        let myArray = [1, 2, 3, 4, 5];
+        myArray[position - 1] = num;
 
-    return myArray[position - 1];
-},
+        return myArray[position - 1];
+    },
 
 
 
 
 // loops 
 // for
-myForLoop: (myForLoopVar) => {
-    let myForLoopArray = [];
-    let sum = 0;
-    for (let i = 0; i < myForLoopVar; i += 2) {
-        myForLoopArray.push(i);
-        sum = myForLoopArray.reduce((cur, acc) => (acc + cur));
-        
-    };
-    return sum;
-},
+    myForLoop: (myForLoopVar) => {
+        let myForLoopArray = [];
+        let sum = 0;
+        for (let i = 0; i < myForLoopVar; i += 2) {
+            myForLoopArray.push(i);
+            sum = myForLoopArray.reduce((cur, acc) => (acc + cur));
+            
+        };
+        return sum;
+    },
 // for/in
 
-forInFunction: (forInInput) => {
-    const loopObject ={
-        firstName: "Archibald",
-        lastName: "Shazam",
-        car: "Unicycle"
-    
-    };
-    let profile = "";
-    for (let prop in loopObject) {
-        profile += loopObject[prop] + " ";
+    forInFunction: (forInInput) => {
+        const loopObject = {
+            firstName: "Archibald",
+            lastName: "Shazam",
+            car: "Unicycle"
         
-    };
-    return profile;
-},
+        };
+        let profile = "";
+        for (let prop in loopObject) {
+            profile += loopObject[prop] + " ";
+            
+        };
+        return profile;
+    },
 // while
 
     myWhileLoop: (whileInput) => {
@@ -113,16 +113,36 @@ forInFunction: (forInInput) => {
         return doArray;
     },
     
-// forEach array
+// forEach array and function
     forEachFunc: (forEachInput) => {
         let forArray = forEachInput;
-        forArray.forEach( )
+        let newArray = [];
+        const doThisForEach = (item, index) => {
+            
+            newArray.push(item + "!");
+            console.log(newArray);
+        };
+        forArray.forEach(doThisForEach);
+
     },
-// forEach function
+
 // Objects / Dictionaries
-// declare object
+    objectTests: (objectInput) => {
+        // declare object
+        const daysOTheWeek = {
+        Sunday: "Funday",
+        Monday: "OneDay!",
+        Tuesday: "Newsday",
+        Wednesday: "Wed-Nes-Day...",
+        Thursday: "It's the day of Thor!",
+        Friday: "Freedom!!!!",
+        Saturday: "Homework lol"
+        };
+    return daysOTheWeek[objectInput];
+    }
+}
 // lookup key to retrieve value
-};
+
 
 
 export default functions;
