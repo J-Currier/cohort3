@@ -7,8 +7,7 @@ const functions = {
 // dictionary / objects
 // undefined
     
-    firstTest: (a) => {
-        console.log(a);
+    firstTest: (a) => {        
         let numType =  typeof a;
             if (numType == "object") {
                 Array.isArray(a) ? numType = "array" : numType = "object";
@@ -40,7 +39,6 @@ funcTest: (a, b) => {
 arrayTest: (a) => {
     let myArray = [];
     myArray.push(a);
-    console.log(myArray);
     return myArray[myArray.length - 1];
 },
 
@@ -49,7 +47,6 @@ arrayTest: (a) => {
 arrayTestFront: (a) => {
     let myArray = [];
     myArray.unshift(a);
-    console.log(myArray);
     return myArray[myArray.length - 1];
 },
 
@@ -71,23 +68,60 @@ myForLoop: (myForLoopVar) => {
     let sum = 0;
     for (let i = 0; i < myForLoopVar; i += 2) {
         myForLoopArray.push(i);
-        console.log(myForLoopArray);
         sum = myForLoopArray.reduce((cur, acc) => (acc + cur));
         
     };
     return sum;
 },
 // for/in
+
 forInFunction: (forInInput) => {
-    console.log("do something");
+    const loopObject ={
+        firstName: "Archibald",
+        lastName: "Shazam",
+        car: "Unicycle"
+    
+    };
+    let profile = "";
+    for (let prop in loopObject) {
+        profile += loopObject[prop] + " ";
+        
+    };
+    return profile;
 },
 // while
+
+    myWhileLoop: (whileInput) => {
+        let myArray = [];
+        let i = 0;
+        while(i < whileInput) {
+            myArray.push(i);
+            i++;
+
+        };
+        return myArray;
+    },
 // do while
-// forEach (with array and function)
+    doWhile: (doWhileInput) => {
+        let doArray = [];
+        let i = 1;
+        while(i < doWhileInput) {
+            doArray.push(i);
+            i++;
+
+        };
+        return doArray;
+    },
+    
+// forEach array
+    forEachFunc: (forEachInput) => {
+        console.log(9);
+    },
+// forEach function
 // Objects / Dictionaries
 // declare object
 // lookup key to retrieve value
-}
+};
 
 
 export default functions;

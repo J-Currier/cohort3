@@ -1,4 +1,5 @@
 import functions from './syntax' 
+import { exportAllDeclaration } from '@babel/types'
 
 
 // // define attributes / variables
@@ -63,16 +64,28 @@ import functions from './syntax'
 // });
 
 
-// for/in
-test('check forin', () => {
-    expect(functions.ifElse("First Name")).toBe("John, Mary"); // Consider the edge cases
-    expect(functions.ifElse(10)).toBe(false);
+// // for/in
+// test('check forin', () => {
+//     expect(functions.forInFunction("")).toBe("Archibald Shazam Unicycle "); 
     
-});
+// });
 
-// while
-// do while
-// forEach (with array and function)
+// // while
+// test('While loop test', () => {
+//     expect(functions.myWhileLoop(4)).toBe[0, 1, 2, 3];
+// });
+
+// // do while
+// test('Do While Test', () => {
+//     expect(functions.doWhile(0)).toBe[1];
+//     expect(functions.doWhile(4)).toBe[0, 1, 2, 3];
+// });
+
+// forEach array
+test('For Each Test', () => {
+    expect(functions.forEachFunc["hi", "hello", "howdy"]).toBe["hi!", "hello!", "howdy!"]
+})
+// forEach function
 // Objects / Dictionaries
 // declare object
 // lookup key to retrieve value
