@@ -127,6 +127,7 @@ const functions = {
     },
 
 // Objects / Dictionaries
+
     objectTests: (objectInput) => {
         // declare object
         const daysOTheWeek = {
@@ -138,11 +139,25 @@ const functions = {
         Friday: "Freedom!!!!",
         Saturday: "Homework lol"
         };
+        // lookup key to retrieve value
     return daysOTheWeek[objectInput];
+    },
+
+    // Calculator
+    // Calculator
+    // Calculator
+    
+    calculatorFunction: (typedInput) => {
+        console.log("do something");
+
     }
-}
-// lookup key to retrieve value
+
+
+
+
 
 
 
 export default functions;
+
+
