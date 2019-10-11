@@ -7,9 +7,9 @@ const functions = {
         if (a === b) {
             return true;
         } else {
-            console.log("the two values are not the same:")
-            console.log("p1--> " + a);
-            console.log("p1--> " + b);
+            console.log( `*** the two values are not the same:
+            p1------> ${a}
+            p2------> ${b}`);
             return false;
         };
     },

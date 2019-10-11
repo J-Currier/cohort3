@@ -1,16 +1,16 @@
 import functions from './daily.js'
 
 
-// //2019-10-6 Daily Exercise
-// test('check parameters', () => {
-//     expect(funtions.assertEquals("a","b")).toBe(false); // Consider the edge cases
-//     expect(functions.assertEquals("a","a")).toBe(true);
-//     expect(functions.assertEquals(1,2)).toBe(false);
-//     expect(functions.assertEquals(2,2)).toBe(true); 
-//     expect(functions.assertEquals("2",2)).toBe(false);
-//     expect(functions.assertEquals("This value","This value")).toBe(true);
+//2019-10-6 Daily Exercise
+test('check parameters', () => {
+    expect(functions.assertEquals("a","b")).toBe(false); // Consider the edge cases
+    expect(functions.assertEquals("a","a")).toBe(true);
+    expect(functions.assertEquals(1,2)).toBe(false);
+    expect(functions.assertEquals(2,2)).toBe(true); 
+    expect(functions.assertEquals("2",2)).toBe(false);
+    expect(functions.assertEquals("This value","This value")).toBe(true);
 
-// });
+});
 
 // test('practice test', () => {
 //     console.log("hello world");
