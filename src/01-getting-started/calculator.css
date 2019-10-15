@@ -1,7 +1,7 @@
 html {
     font-size:62.5%;
     box-sizing: border-box;
-    background-image: url(/images/moustache.jpg);
+    /* background-image: url(/images/moustache.jpg); */
    
     height: 1vh;
     
@@ -18,6 +18,7 @@ html {
 }
 .calculator {
     border: thick solid black;
+    border-radius: 4px;
     position: absolute;
     margin: 20px;
     transform: translate(50% 50%);
@@ -28,7 +29,8 @@ html {
 .result {
     width: 100%;
     height: 100px;
-    border: none;
+    border: thin black solid;
+    border-radius: 1px;
     background-color: #a5f07d;
     color: black;
     text-align: right;
@@ -39,7 +41,7 @@ html {
 
 button {
     height: 60px;
-    background-color: rgb(234, 241, 248);
+    background-color: rgb(161, 202, 243);
     border: 1px solid rgb(85, 97, 109);
     font-size 2rem;
     color: #333;
@@ -48,10 +50,10 @@ button {
 }
 
 button:hover {
-    background-color: rgb(161, 202, 243);
+    background-color: rgb(231, 239, 248);
 }
 .buttons {
-    background-color: rgb(119, 7, 172);S
+    background-image: url(/images/calcbg.jpg);
 }
 .operation {
     color: black;
@@ -59,7 +61,7 @@ button:hover {
 }
 
 .clear {
-    background-color: #4d20f1;
+    background-color: #291d52;
     border-color: #ffffff;
     color: #fff;
 }
@@ -69,7 +71,7 @@ button:hover {
 }
 
 .equal {
-    background-color: #030a0f;
+    background-color: #07253b;
     border-color: #337cac;
     color: #fff;
     height: 100%;
@@ -77,7 +79,7 @@ button:hover {
 }
 
 .equal:hover {
-    back-ground-color: rgb(113, 20, 141);
+    background-color: #136199; 
     
 }
 .buttons {
