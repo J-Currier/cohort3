@@ -15,3 +15,10 @@ test('Does that add function work?', () => {
     expect(functions.add(1,2)).toBe(3);
     expect(functions.add(101,202)).toBe(303);
 });
+
+test('Calculator test', () => {
+    expect(functions.objectTests(5*3)).toBe(15);
+    expect(functions.objectTests(5+3)).toBe(8);
+    expect(functions.objectTests(5-3)).toBe(2);
+    expect(functions.objectTests(5/3)).toBe(2.5);
+});

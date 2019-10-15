@@ -76,3 +76,49 @@ html {
         min-height: 400px;
     }
 }
+
+/* New things I've added for calculator*/
+.zone {
+    /* padding: 30px 50px; */
+    /* cursor:pointer;4 */
+
+    /* display:inline-block; */
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+/* cover */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+.red{
+    background: #bdc9de; /* Old browsers */
+    /* background-image: url('./images/calcedited.png'); */
+    min-height: 90%;
+    
+    
+}
+
+.calcinput{
+    position: relative;
+    left: -565px;
+    top: -90px;
+}
+.enterinput{
+    position: relative;
+    left: 175px;
+    top: 20px;
+}
