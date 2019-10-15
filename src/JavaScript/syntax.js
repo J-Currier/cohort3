@@ -143,14 +143,7 @@ const functions = {
     return daysOTheWeek[objectInput];
     },
 
-    // Calculator
-    // Calculator
-    // Calculator
-    
-    calculatorFunction: (typedInput) => {
-        console.log("do something");
-
-    }
+   
 
 
 

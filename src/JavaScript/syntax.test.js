@@ -89,9 +89,3 @@ import { exportAllDeclaration } from '@babel/types'
 //     expect(functions.objectTests("Saturday")).toBe("Homework lol");
 // });
 
-test('Calculator test', () => {
-        expect(functions.objectTests(5*3)).toBe(15);
-        expect(functions.objectTests(5+3)).toBe(8);
-        expect(functions.objectTests(5-3)).toBe(2);
-        expect(functions.objectTests(5/3)).toBe(2.5);
-    });
