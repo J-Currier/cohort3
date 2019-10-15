@@ -27,6 +27,19 @@ const functions = {
         return emailAddress.toLowerCase();
     }
 
+//2019-10-15 Daily Exercise
+        // Let’s dig deeper into arrays. Read the documentation on the following and create examples of each one:
+
+        // Basics
+        // for
+    forloopdaily: (myinput) => {
+        return 7;
+    };
+        // while
+        // do while
+        // Next Level
+        // for in
+        // for of
 
 
 
