@@ -1,4 +1,5 @@
 import functions from './daily.js'
+import { tsExternalModuleReference, exportAllDeclaration } from '@babel/types'
 
 
 // //2019-10-6 Daily Exercise
@@ -27,3 +28,17 @@ import functions from './daily.js'
 //     expect(functions.makeEmailArr(["Bill", "Smith"]))
 //         .toEqual("bill.smith@evolveu.ca");
 // });
+
+// // 2019-10-15 Daily Exercise
+// test('for loop', () => {
+//     expect(functions.forloopdaily(5)).toEqual([0, 1, 2, 3, 4]);
+// });
+
+// test('while loop', () => {
+//     expect(functions.whileLoop(5)).toEqual("01234");
+// });
+
+test('do while loop', () => {
+    expect(functions.doWhileLoop(0)).toEqual([0]);
+    expect(functions.doWhileLoop(3)).toEqual([0, 1, 2]);
+});

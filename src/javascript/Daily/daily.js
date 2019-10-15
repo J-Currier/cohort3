@@ -25,7 +25,7 @@ const functions = {
     makeEmailArr: (emailArrInput) => {
         let emailAddress = `${emailArrInput[0]}.${emailArrInput[1]}@evolveu.ca`;
         return emailAddress.toLowerCase();
-    }
+    },
 
 //2019-10-15 Daily Exercise
         // Let’s dig deeper into arrays. Read the documentation on the following and create examples of each one:
@@ -33,10 +33,36 @@ const functions = {
         // Basics
         // for
     forloopdaily: (myinput) => {
-        return 7;
-    };
+        let text = [];
+        for (let i = 0; i < myinput; i ++) {
+            text.push(i);
+        };
+        return text;
+    },
         // while
+    whileLoop: (wlinput) => {
+        let myString = "";
+        let i = 0;
+        while (i < wlinput) {
+            myString = myString + i;
+            i++;
+
+        };
+        return myString;
+    },
         // do while
+    doWhileLoop: (dwlinput) => {
+        let myArr = [];
+        let i = 0;
+        do {
+            myArr.push(i);
+            i ++;
+        }
+        while (i < dwlinput);
+        return myArr;
+    }
+
+        
         // Next Level
         // for in
         // for of
