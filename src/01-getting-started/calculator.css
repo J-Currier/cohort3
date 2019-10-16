@@ -1,29 +1,24 @@
+
 html {
     font-size:62.5%;
     box-sizing: border-box;
-    /* background-image: url(/images/moustache.jpg); */
-   
     height: 1vh;
-    
-    
 }
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
   }
-.backgroundSpace {
-    
 
-}
+
 .calculator {
     border: thick solid black;
     border-radius: 4px;
     position: absolute;
     margin: 20px;
     transform: translate(50% 50%);
- 
     width:400px;
+    
 }
 
 .result {
@@ -36,7 +31,8 @@ html {
     text-align: right;
     padding-right 20px;
     padding-left: 10px;
-    
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4em;
 }
 
 button {
@@ -45,6 +41,7 @@ button {
     border: 1px solid rgb(85, 97, 109);
     font-size 2rem;
     color: #333;
+    font-family: 'Orbitron', sans-serif;
     
 
 }

@@ -78,47 +78,95 @@ html {
 }
 
 /* New things I've added for calculator*/
-.zone {
-    /* padding: 30px 50px; */
-    /* cursor:pointer;4 */
 
-    /* display:inline-block; */
-    color:#FFF;
-    font-size:2em;
-    border-radius:4px;
-    border:1px solid #bbb;
-    transition: all 0.3s linear;
+html {
+    font-size:62.5%;
+    box-sizing: border-box;
+    height: 1vh;
 }
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
 
-.zone:hover {
-    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-}
-/* cover */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    
-}
-.red{
-    background: #bdc9de; /* Old browsers */
-    /* background-image: url('./images/calcedited.png'); */
-    min-height: 90%;
-    
-    
-}
 
-.calcinput{
+.calculator {
+    border: thick solid black;
+    border-radius: 4px;
     position: relative;
-    left: -565px;
-    top: -90px;
+    margin: 20px;
+    transform: translate(50% 50%);
+    width:400px;
+    
 }
-.enterinput{
-    position: relative;
-    left: 175px;
-    top: 20px;
+
+.result {
+    width: 100%;
+    height: 100px;
+    border: thin black solid;
+    border-radius: 1px;
+    background-color: #a5f07d;
+    color: black;
+    text-align: right;
+    padding-right 20px;
+    padding-left: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4em;
 }
+
+button {
+    height: 60px;
+    background-color: rgb(161, 202, 243);
+    border: 1px solid rgb(85, 97, 109);
+    font-size 2rem;
+    color: #333;
+    font-family: 'Orbitron', sans-serif;
+    
+
+}
+
+button:hover {
+    background-color: rgb(231, 239, 248);
+}
+.buttons {
+    background-image: url(/images/calcbg.jpg);
+}
+.operation {
+    color: black;
+    font: bold;
+}
+
+.percentage {
+    color: black;
+    font: bold;
+}
+
+.clear {
+    background-color: #291d52;
+    border-color: #ffffff;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #a18cf0;
+}
+
+.equal {
+    background-color: #07253b;
+    border-color: #337cac;
+    color: #fff;
+    height: 100%;
+    grid-area: 3 / 4 / 6 / 5;
+}
+
+.equal:hover {
+    background-color: #136199; 
+    
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+  }
