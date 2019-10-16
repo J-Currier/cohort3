@@ -38,7 +38,43 @@ import { tsExternalModuleReference, exportAllDeclaration } from '@babel/types'
 //     expect(functions.whileLoop(5)).toEqual("01234");
 // });
 
-test('do while loop', () => {
-    expect(functions.doWhileLoop(0)).toEqual([0]);
-    expect(functions.doWhileLoop(3)).toEqual([0, 1, 2]);
+// test('do while loop', () => {
+//     expect(functions.doWhileLoop(0)).toEqual([0]);
+//     expect(functions.doWhileLoop(3)).toEqual([0, 1, 2]);
+// });
+
+// test('for in loop', () => {
+//     expect(functions.forInLoop({fname:"John", lname:"Doe", age:25})).toEqual("JohnDoe25");
+// });
+
+// test('for of loop', () => {
+//     expect(functions.forOfLoop("hello there")).toEqual(11);
+// });
+
+// //2019-10-15 Daily Exercise
+// test('sliceEx', () => {
+//     expect(functions.sliceEx(["Banana", "Orange", "Lemon", "Apple", "Mango"])).toEqual(["Lemon", "Apple", "Mango"]);
+// });
+
+// 
+
+// test('forEach', () => {
+//     expect(functions.forEach(["Banana", "Orange", "Mango"])).toBe(3);
+// });
+
+// test('map', () => {
+//     expect(functions.mapping([1, 2, 3, 4])).toEqual([2, 4, 6]);
+// });
+
+// test('filter', () => {
+//     expect(functions.filtering([1, 2, 3, 4])).toEqual([1, 2]);
+// });
+
+// test('reduce', () => {
+//     expect(functions.reducing([1, 2, 3, 4])).toEqual(10);
+// });
+
+test('sort', () => {
+    expect(functions.sorter(["Banana", "Orange", "Lemon", "Apple", "Mango"])).toEqual(["Apple", "Banana", "Lemon", "Mango", "Orange"]
+    );
 });
