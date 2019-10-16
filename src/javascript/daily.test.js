@@ -21,11 +21,11 @@ import { tsExternalModuleReference, exportAllDeclaration } from '@babel/types'
 // //2019-10-9 Daily Exercise
 // test('email builder from an array', () => {
 //     const name = ["first", "last"];
-//     expect(functions.makeEmailArr(name))
+//     expect(functions.makeEmailObj(name))
 //         .toEqual("first.last@evolveu.ca");
-//     expect(functions.makeEmailArr(["First", "Last"]))
+//     expect(functions.makeEmailObj(["First", "Last"]))
 //         .toEqual("first.last@evolveu.ca");
-//     expect(functions.makeEmailArr(["Bill", "Smith"]))
+//     expect(functions.makeEmailObj(["Bill", "Smith"]))
 //         .toEqual("bill.smith@evolveu.ca");
 // });
 

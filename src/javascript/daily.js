@@ -22,8 +22,8 @@ const functions = {
 
 //2019-10-9 Daily Exercise
 
-    makeEmailArr: (emailArrInput) => {
-        let emailAddress = `${emailArrInput[0]}.${emailArrInput[1]}@evolveu.ca`;
+    makeEmailObj: (emailArrInput) => {
+        let emailAddress = `${emailObjInput[0]}.${emailObjInput[1]}@evolveu.ca`;
         return emailAddress.toLowerCase();
     },
 

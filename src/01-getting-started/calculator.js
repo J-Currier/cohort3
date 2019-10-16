@@ -17,6 +17,7 @@ function inputDigit(digit) {
 };
 
 function inputDecimal(dot) {
+    if (calculator.waitingForSecondOperand === true) return;
     if (!calculator.displayValue.includes(dot)) {
         calculator.displayValue += dot;
     };
@@ -25,6 +26,11 @@ function inputDecimal(dot) {
 function handleOperator(nextOperator) {
     const {firstOperand, displayValue, operator } = calculator;
     const inputValue = parseFloat(displayValue);
+    if (operator && calculator.waitingForSecondOperand) {
+        calculator.operator = nextOperator;
+        console.log(calculator);
+        return;
+    }
     if (firstOperand === null) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
@@ -44,6 +50,19 @@ const performCalculation = {
     "-": (firstOperand, secondOperand) => firstOperand - secondOperand,
     "=": (firstOperand, secondOperand) => secondOperand,
 };
+
+function percentageFunction() {
+    calculator.displayValue = parseFloat(calculator.displayValue) / 100;
+    
+};
+
+function resetCalculator() {
+    calculator.displayValue = "0";
+    calculator.firstOperand = null;
+    calculator.waitingForSecondOperand = false;
+    calculator.operator = null;
+    console.log(calculator);
+}
 
 function updateDisplay() {
     const display = document.querySelector('.result');
@@ -66,11 +85,17 @@ keys.addEventListener('click', (event) => {
         return;
     }
     if (target.classList.contains('clear')) {
-        console.log('clear', target.values);
+        resetCalculator();
+        updateDisplay();
         return;
     }
     if (target.classList.contains("decimal")) {
         inputDecimal(target.value);
+        updateDisplay();
+        return;
+    }
+    if (target.classList.contains("percentage")){
+        percentageFunction();
         updateDisplay();
         return;
     }
