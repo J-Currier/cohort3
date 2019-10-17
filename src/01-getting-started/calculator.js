@@ -106,29 +106,63 @@
 // VVVVVVVV Canadian Tax Calculator Code VVVVVVVV
 
 
-const testFunctions = {
-    taxCalcButtonClick: () => {
-        console.log("button was pressed");
-    },
 
+myButton.addEventListener('click', function() {
+    console.log("button was pressed");
+});
+
+
+function taxCalcButtonClick() {
+    console.log("button was pressed");
+    // let textInput = document.getElementById("incomeInput").value;
+    // document.getElementById("outputtaxestext").innerHTML.HTML = taxCalcTaxPayment(textInput);
+    
+};
+
+const testFunctions = {
+    
+
+    
     taxCalcTaxPayment: (income) => {
         let taxesToPay = 0;
-        if (income < 0) {
-            console.log("Please check your input and try again")
-        }
         if (income < 47630.01) {
             taxesToPay = income * .15
-            console.log(taxesToPay);
             return taxesToPay;
         };
         if (income > 47630.00 && income < 95259.01) {
             taxesToPay = 7144.5 + ((income - 47630) * .205);
-            console.log(taxesToPay);
             return taxesToPay;
         };
+        if (income > 95259.00 && income < 147667.01) {
+            taxesToPay = 16908.45 + ((income - 95259) * .26);
+            return taxesToPay;
+        };
+        if (income > 147667.00 && income < 210371.01) {
+            taxesToPay = 30534.53 + ((income - 147667) * .29);
+            return taxesToPay;
+        };
+        if (income > 210371.00) {
+            taxesToPay = 48718.69 + ((income - 210371) * .33);
+            return taxesToPay;
+        };
+        console.log(taxesToPay);
+        let netPay = income - taxesToPay;
+        console.log("netpay" , netpay)
+        
 
     },
+    netIncome: (income) => {
+        let taxes = testFunctions.taxCalcTaxPayment(income);
+        let netPay = income - taxes;
+        return netPay;
+
+    },
+    effectiveTaxRate: (income) => {
+        let taxes = testFunctions.taxCalcTaxPayment(income);
+        let effectTaxRate = taxes / income * 100;
+        return effectTaxRate;
+    }
 
 }
 
-export default testFunctions;
+// export default testFunctions;
