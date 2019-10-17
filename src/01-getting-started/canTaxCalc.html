@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="canTaxCalc.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Canadian Tax Calculator</title>
+</head>
+<body>
+    <div class="backgroundSpace">
+        <div class="title">
+            Canadian Tax Calculator
+        </div>
+        <div class="incomeSection">
+            <div class="instructions">
+                Input your income
+            </div>
+            <div class="inputsection">
+                    <input type="text" id="incomeinput" style="width: 350px; height: 40px;">
+            </div>
+            <div class="submitbuttonsection">
+                <button class="myButton" onclick="testFunctions.taxCalcButtonClick()">Submit</button>
+            </div>
+        </div>
+        <div class="outputsection">
+            <div class="outputtaxestext">
+                Your tax amount is
+            </div>
+            <div class="outputtaxesans">
+            </div>
+            <div class="outputincometext">
+                Your net income is
+            </div>
+            <div class="outputincomeans">
+            </div>
+            <div class="outputtaxratetext">
+                Your effective tax rate is
+            </div>
+            <div class="outputtaxrateans">
+            </div>
+        </div>
+
+    </div>
+<script src="calculator.js"></script>
+</body>
+</html>
