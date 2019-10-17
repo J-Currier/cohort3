@@ -51,6 +51,7 @@ html {
     grid-row-start: 1;
     text-align: right;
     padding-right: 5%;
+    padding-top: 10px;
     
 }
 
@@ -67,7 +68,7 @@ html {
 .outputsection {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-row-gap: 14px;
 }
 
@@ -76,12 +77,13 @@ html {
     grid-column-start: 1;
     grid-row-start: 1;
     text-align: right;
+    padding-bottom: 5px;
 }
 .outputtaxesans {
-    font-size: 3em;
+    font-size: 2em;
     grid-column-start: 2;
     grid-row-start: 1;
-
+    text-align: center;
 }
 
 .outputincometext {
@@ -89,24 +91,26 @@ html {
     grid-column-start: 1;
     grid-row-start: 2;
     text-align: right;
+    padding-bottom: 5px;
 }
 .outputincomeans {
-    font-size: 3em;
+    font-size: 2em;
     grid-column-start: 2;
     grid-row-start: 2;
-
+    text-align: center;
 }
 .outputtaxratetext {
     font-size: 2em;
     grid-column-start: 1;
     grid-row-start: 3;
     text-align: right;    
+    padding-bottom: 10px;
 }
 .outputtaxrateans {
-    font-size: 3em;
+    font-size: 2em;
     grid-column-start: 2;
     grid-row-start: 3;
-
+    text-align: center;
 }
 .myButton {
 	background:linear-gradient(to bottom, #5c9292 5%, #1e6060 100%);
@@ -129,4 +133,13 @@ html {
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.incomeinput {
+    /* style="width: 350px; height: 40px; font-family: Montserrat; font-size: 25px;" */
+    width: 350px;
+    height: 40px;
+    font-family: Montserrat;
+    font-size: 1em;
+
 }
