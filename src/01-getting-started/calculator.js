@@ -115,19 +115,12 @@ myButton.addEventListener('click', function() {
     let totIncome = testFunctions.netIncome(textInput);
     document.getElementById("outputincomeans").innerHTML = "$ " + totIncome;
     let totrate = testFunctions.effectiveTaxRate(textInput);
-    document.getElementById("outputtaxrateans").innerHTML = totrate + "%";
+    let totalrate = Number.parseFloat(totrate).toFixed(2);
+    document.getElementById("outputtaxrateans").innerHTML = totalrate + "%";
 });
 
 
-// function taxCalcButtonClick() {
-//     console.log("button was pressed");
-//     // let textInput = document.getElementById("incomeinput").value;
-//     console.log("hi");
-//     console.log(textInput);
 
-//     // document.getElementById("outputtaxestext").innerHTML.HTML = taxCalcTaxPayment(textInput);
-    
-// };
 
 const testFunctions = {
 
