@@ -319,3 +319,35 @@ button:hover {
     font-size: 2em;
 
 }
+
+
+/* vvvvvvv working with arrays vvvvvvvvvvv */
+.arrayContainer {
+    border: thick black solid;
+    width: 800px;
+    border-radius: 15px;
+    background:linear-gradient(to bottom, #86f0f0 5%, #38f8f8 100%);
+    display: grid;
+    font-family: Montserrat;
+    padding-top: 20px;
+    margin: 200px;
+    text-align: center;
+
+}
+
+.arrayTitle {
+    color: black;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+.arrInput {
+    font-size: 1em;
+    text-align: right;
+    padding-right: 5%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+
