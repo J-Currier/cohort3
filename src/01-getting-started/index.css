@@ -385,4 +385,44 @@ button:hover {
     padding-top: 60px;
 }
 
+/* vvvvv dictionary vvvvv */
 
+.dictionaryContainer {
+    border: thick black solid;
+    width: 800px;
+    border-radius: 15px;
+    background:linear-gradient(to bottom, #b843f9 5%, #38f8f8 100%);
+    display: grid;
+    font-family: Montserrat;
+    padding-top: 20px;
+    margin: 200px;
+    text-align: center;
+
+}
+
+.dicInputField {
+    width: 400px;
+    height: 40px;
+}
+
+.dicButtons {
+    padding-top: 30px;
+}
+.lookupButtonClass {
+	background-color:#e15fe6;
+	border-radius:19px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:16px 17px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #2b00ff;
+    
+}
+.lookupButtonClass:hover {
+	background-color:#ae17b3;
+}
