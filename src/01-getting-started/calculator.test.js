@@ -23,13 +23,21 @@ import testFunctions from './calculator.js'
     
 // });
 
-test('effective tax rate', () => {
-    expect(testFunctions.effectiveTaxRate(1)).toBeCloseTo(15.00, 2); // Consider the edge cases
-    expect(testFunctions.effectiveTaxRate(100)).toBeCloseTo(15.00, 2);
-    expect(testFunctions.effectiveTaxRate(10)).toBeCloseTo(15.00, 2);
-    expect(testFunctions.effectiveTaxRate(50000)).toBeCloseTo(15.26, 2);
-    expect(testFunctions.effectiveTaxRate(100000)).toBeCloseTo(18.14, 2);
-    expect(testFunctions.effectiveTaxRate(150000)).toBeCloseTo(20.81, 2);
-    expect(testFunctions.effectiveTaxRate(250000)).toBeCloseTo(24.72, 2);
+// test('effective tax rate', () => {
+//     expect(testFunctions.effectiveTaxRate(1)).toBeCloseTo(15.00, 2); // Consider the edge cases
+//     expect(testFunctions.effectiveTaxRate(100)).toBeCloseTo(15.00, 2);
+//     expect(testFunctions.effectiveTaxRate(10)).toBeCloseTo(15.00, 2);
+//     expect(testFunctions.effectiveTaxRate(50000)).toBeCloseTo(15.26, 2);
+//     expect(testFunctions.effectiveTaxRate(100000)).toBeCloseTo(18.14, 2);
+//     expect(testFunctions.effectiveTaxRate(150000)).toBeCloseTo(20.81, 2);
+//     expect(testFunctions.effectiveTaxRate(250000)).toBeCloseTo(24.72, 2);
     
+// });
+
+// test('Array Add', () => {
+//     expect(testFunctions.arrAdd([1, 2, 3], 4)).toStrictEqual([1, 2, 3, 4]); // Consider the edge cases
+// });
+
+test('Array Total', () => {
+    expect(testFunctions.arrTotal([1, 2, 3])).toStrictEqual(6); // Consider the edge cases
 });
