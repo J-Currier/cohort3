@@ -158,7 +158,29 @@ arrClearButton.addEventListener('click', function() {
 });
 
 
+lookupButton.addEventListener("click", function() {
+    console.log("dictionary button");
+    let lookupValue = document.getElementById("dicInputField").value;
+    console.log(lookupValue);
+    const provinceDictionary = {
+        NL: "Newfoundland",
+        PE: "Prince Edward Island",
+        NB: "New Brunswick",
+        NS: "Nova Scotia",
+        QC: "Quebec",
+        ON: "Ontario",
+        MB: "Manitoba",
+        SK: "Saskatchewan",
+        AB: "Alberta",
+        BC: "British Columbia",
+        YT: "Yukon",
+        NT: "Northwest Territories",
+        NU: "Nunavut"
+    }
+    let province = provinceDictionary[lookupValue];
+    document.getElementById("dicMessageArea").innerHTML = province;
 
+})
 
 
 const testFunctions = {
