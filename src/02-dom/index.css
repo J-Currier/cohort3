@@ -7,7 +7,7 @@ html {
 }
 
 *, *::before, *::after {
-    margin: 0;
+    /* margin: 1rem; */
     padding: 0;
     box-sizing: inherit;
 }
@@ -21,5 +21,33 @@ html {
 
 .title {
     font-size: 3em;
-    padding: 15px;git border-end-start-radius: ;
+    padding: 15px;
+    padding-bottom: 30px;
+}
+
+.orderedList {
+    text-align: left;
+    padding-left: 25%;
+    font-size: 1.2em;
+}
+
+.buttons {
+    padding: 20px;
+}
+
+.domButtons {
+	background-color:#7892c2;
+	border-radius:6px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:17px;
+	padding:11px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.domButtons:hover {
+	background-color:#476e9e;
 }
