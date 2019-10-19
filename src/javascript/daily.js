@@ -22,7 +22,7 @@ const functions = {
 
 //2019-10-9 Daily Exercise
 
-    makeEmailObj: (emailArrInput) => {
+    makeEmailObj: (emailObjInput) => {
         let emailAddress = `${emailObjInput[0]}.${emailObjInput[1]}@evolveu.ca`;
         return emailAddress.toLowerCase();
     },
