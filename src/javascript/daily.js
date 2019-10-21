@@ -1,6 +1,15 @@
 const functions = { 
     //functions object
 
+// 2019-10-21 Daily Exercise-Email list
+    loopStaff: (dataobject) => {
+        let myArr = [];
+        for (let x of dataobject) {
+            myArr.push(functions.makeEmailObj(x));
+        };
+        return myArr;
+    },
+
 //2019-10-6 Daily Exercise
 
     assertEquals: (a, b) => {
@@ -16,14 +25,11 @@ const functions = {
 
 
 
-// and before this comment ---
-
-
 
 //2019-10-9 Daily Exercise
 
     makeEmailObj: (emailObjInput) => {
-        let emailAddress = `${emailObjInput[0]}.${emailObjInput[1]}@evolveu.ca`;
+        let emailAddress = `${emailObjInput.fname}.${emailObjInput.lname}@evolveu.ca`;
         return emailAddress.toLowerCase();
     },
 
