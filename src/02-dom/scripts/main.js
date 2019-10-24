@@ -4,4 +4,6 @@ import functions from "./functions.js";
 
 // this is for the event listeners
 
-document.getElementById("domBoxID").addEventListener('click', functions.divClickFunction);
+domBoxID.addEventListener('click', function() {
+    functions.divClickFunction()
+});
