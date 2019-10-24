@@ -10,5 +10,8 @@ domBoxID.addEventListener('click', function() {
 
 showButton.addEventListener('click', function() {
     functions.showButtonFunc();
-    console.log('show button clicked');
+});
+
+addButton.addEventListener('click', function () {
+    functions.addButtonFunction();
 })

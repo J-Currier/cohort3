@@ -6,5 +6,9 @@ test('divClick', () => {
 });
 
 test('showButton', () => {
-    expect(functions.showButtonFunc(5)).toBe(0);
+    expect(functions.showButtonFunc(5)).toBe(4);
+});
+
+test('addButton', () => {
+    expect(functions.addButtonFunction(5)).toBe(9);
 });
