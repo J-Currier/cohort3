@@ -4,6 +4,7 @@ html {
     height: 1vh;
     text-align: center;
     padding-top: 75px;
+    background-color: #7892c2;
 }
 
 *, *::before, *::after {
@@ -12,11 +13,12 @@ html {
     box-sizing: inherit;
 }
 
+
 .domBox {
     border: 2px solid black;
     width: 50%;
     margin: 0 auto;
-    
+    background-color: whitesmoke;
 }
 
 .title {
@@ -51,3 +53,30 @@ html {
 .domButtons:hover {
 	background-color:#476e9e;
 }
+
+
+.cardExerciseContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.cardTitle {
+    padding-top: 80px;
+    padding-bottom: 30px;
+    font-size: 3em;
+    text-decoration: underline;
+}
+
+.leftPanel {
+    background-color: whitesmoke;
+    margin: 10px;
+
+}
+
+.rightPanel {
+    padding: 10px;
+    background-color: whitesmoke;
+    font-size: 2em;
+    margin:10px;
+
+}
+

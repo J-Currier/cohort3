@@ -2,6 +2,29 @@ const functions = {
     //functions object
 
 // 2019-10-21 Daily Exercise-Email list
+    loopStaffOf: (dataobject) => {
+        let myArr = [];
+        for (let x of dataobject) {
+            myArr.push(functions.makeEmailObj(x));
+        };
+        return myArr;
+    },
+
+    loopStaffIn: (dataobject) => {
+        let myArr = [];
+        // console.log(dataobject);
+        for (let x in dataobject) {
+            let staffObject = dataobject[x];
+            console.log(staffObject);
+            console.log(staffObject.fname)
+            let emailAddress = `${staffObject.fname}.${staffObject.lname}@evolveu.ca`;
+            
+            myArr.push(emailAddress.toLowerCase());
+        };
+        return myArr;
+    },
+
+// 2019-10-21 Daily Exercise-Email list
     loopStaff: (dataobject) => {
         let myArr = [];
         for (let x of dataobject) {
