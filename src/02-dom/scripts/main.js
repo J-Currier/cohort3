@@ -7,3 +7,8 @@ import functions from "./functions.js";
 domBoxID.addEventListener('click', function() {
     functions.divClickFunction()
 });
+
+showButton.addEventListener('click', function() {
+    functions.showButtonFunc();
+    console.log('show button clicked');
+})

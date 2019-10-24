@@ -1,6 +1,10 @@
 import functions from "./functions.js";
 
 test('divClick', () => {
-    expect(functions.divClickFunction('larry', 'shumlich')).toBe("l.shumlich@evolveu.ca");
+    expect(functions.divClickFunction(5)).toBe(0);
 
+});
+
+test('showButton', () => {
+    expect(functions.showButtonFunc(5)).toBe(0);
 });
