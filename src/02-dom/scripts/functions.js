@@ -21,6 +21,10 @@ const functions = {
         let list = document.getElementById('olTag');
         list.insertBefore(newListItem, list.childNodes[0]);
         return 9;
+    },
+
+    addCardFunction: () => {
+        console.log("add card function");
     }
 }
 

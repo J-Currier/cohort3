@@ -12,6 +12,10 @@ showButton.addEventListener('click', function() {
     functions.showButtonFunc();
 });
 
-addButton.addEventListener('click', function () {
+addButton.addEventListener('click', function() {
     functions.addButtonFunction();
-})
+});
+
+addCardButton.addEventListener('click', function() {
+    console.log("add a card")
+});
