@@ -1,8 +1,29 @@
 import functions from './daily.js'
 import { tsExternalModuleReference, exportAllDeclaration } from '@babel/types'
 
+// 2019-10-25 Daily Exercise-Email list
+test('email builder map callback company', () => {
+    const staffEmail = functions.loopStaffMap(data.staff);
+    expect(staffEmail[0])
+        .toEqual("jane.smith@evolveu.ca");
+    expect(staffEmail[3])
+        .toEqual("olivia.notly@evolveu.ca");
+    expect(staffEmail[6])
+        .toEqual("benjamin.amis@evolveu.ca");
+});
 
-// 2019-10-21 Daily Exercise-Email list
+test('email builder forEach callback company', () => {
+    const staffEmail = functions.loopStaffForEach(data.staff);
+    expect(staffEmail[0])
+        .toEqual("jane.smith@evolveu.ca");
+    expect(staffEmail[3])
+        .toEqual("olivia.notly@evolveu.ca");
+    expect(staffEmail[6])
+        .toEqual("benjamin.amis@evolveu.ca");
+});
+
+
+// 2019-10-24 Daily Exercise-Email list
 test('email builder forin company', () => {
     const staffEmail = functions.loopStaffIn(data.staff);
     expect(staffEmail[0])

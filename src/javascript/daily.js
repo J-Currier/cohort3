@@ -1,6 +1,29 @@
 const functions = { 
     //functions object
 
+
+// 2019-10-25 Daily Exercise-Email list
+    loopStaffForEach: (dataObject) => {
+        let myArr = [];
+        dataObject.forEach(function(element) {
+            myArr.push(functions.emailCallBackFunction(element));
+            return myArr;
+        });
+        return myArr;
+    },
+
+    loopStaffMap: (dataObject) => {
+        let myArr = dataObject.map(functions.emailCallBackFunction);
+        return myArr;
+    },
+
+    emailCallBackFunction: (staffObject) => {
+        console.log(staffObject.fname);
+        let emailAddress = `${staffObject.fname}.${staffObject.lname}@evolveu.ca`;
+        return (emailAddress.toLowerCase());
+    },
+
+
 // 2019-10-21 Daily Exercise-Email list
     loopStaffOf: (dataobject) => {
         let myArr = [];
