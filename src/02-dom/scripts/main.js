@@ -17,5 +17,5 @@ addButton.addEventListener('click', function() {
 });
 
 addCardButton.addEventListener('click', function() {
-    console.log("add a card")
+    functions.addCardFunction();
 });

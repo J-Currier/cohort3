@@ -24,8 +24,38 @@ const functions = {
     },
 
     addCardFunction: () => {
-        console.log("add card function");
-    }
+        let cardNumberArray = functions.cardIdArrayFunction();
+        console.log(cardNumberArray);
+        let highestCardNumber = Math.max(...cardNumberArray);
+        console.log(highestCardNumber);
+        let newDiv = functions.createNewCardFunction(highestCardNumber);
+        console.log(newDiv);
+    },
+
+    createNewCardFunction: (highestCardNumber) => {
+        return "hi";
+    },
+
+    cardIdArrayFunction: () => {
+        let cardChildren = leftPanelCardsID.children;
+        let cardChildrenLength = document.getElementById('leftPanelCardsID').children.length
+        let cardNumberArray = [];
+        for (let i = 0; i < cardChildrenLength; i++) {
+            cardNumberArray.push(cardChildren[i].id);
+        };
+        return cardNumberArray;
+
+
+    // const newDiv = document.createElement('div');
+    // newDiv.setAttribute('class', 'insideBoxes');
+    // newDiv.setAttribute('counter', counterNum)
+    // newDiv.textContent = "counter is " + counterNum;
+
+    // input.appendChild(newDiv);
+    // console.log(newDiv);
+    // return counterNum;
+
+    },
 }
 
 
