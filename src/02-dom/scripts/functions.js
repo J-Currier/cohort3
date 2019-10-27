@@ -25,6 +25,8 @@ const functions = {
         return 9;
     },
 
+    // Cards exercise Functions
+    // original add button
     addCardFunction: () => {
         let cardNumberArray = functions.cardIdArrayFunction();
         console.log(cardNumberArray);
@@ -38,6 +40,7 @@ const functions = {
         let newCardNumber = highestCardNumber + 1;
         const newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'addedCards');
+        newDiv.setAttribute('value', newCardNumber);
         newDiv.setAttribute('id', newCardNumber)
         newDiv.innerHTML = "Card " + newCardNumber + "<br />";
         leftPanelCardsID.insertBefore(newDiv, leftPanelCardsID.childNodes[0]);
@@ -46,6 +49,23 @@ const functions = {
         functions.createDeleteButton(newCardNumber); 
         console.log(newDiv);
         // leftPanelCardsID.insertBefore(newDiv, leftPanelCardsID.childNodes[0]);
+    },
+
+    addBeforeButtonFunction: () => {
+        let cardNumberArray = functions.cardIdArrayFunction();
+        console.log(cardNumberArray);
+        let highestCardNumber = Math.max(...cardNumberArray);
+        let newCardNumber = highestCardNumber + 1;
+        const newDiv = document.createElement('div');
+        newDiv.setAttribute('class', 'addedCards');
+        newDiv.setAttribute('id', newCardNumber)
+        newDiv.innerHTML = "Card " + newCardNumber + "<br />";
+        // leftPanelCardsID.insertBefore(newDiv, leftPanelCardsID.childNodes[0]);
+        functions.createAddCardBeforeButton(newCardNumber);
+        functions.createAddCardAfterButton(newCardNumber); 
+        functions.createDeleteButton(newCardNumber); 
+        console.log(newDiv);
+
     },
 
     createDeleteButton: (newCardNumber) => {
@@ -61,8 +81,12 @@ const functions = {
         let button = document.createElement('button');
         button.setAttribute('class', 'domButtons addCard');
         button.innerHTML = 'Add Before';
-        button.id = "addBefore";
+        button.setAttribute('id', "addBeforeButton");
         let newCardID = document.getElementById(newCardNumber)
+        newCardID.addEventListener('click', function(){
+            console.log("button id", + event.target.id);
+            functions.addBeforeButtonFunction();
+        });
         newCardID.appendChild(button);
     },
 
