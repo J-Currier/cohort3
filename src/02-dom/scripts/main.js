@@ -9,7 +9,7 @@ domBoxID.addEventListener('click', function() {
 });
 
 showButton.addEventListener('click', function() {
-    functions.showButtonFunc();
+    functions.showButtonFunc(this.id);
 });
 
 addButton.addEventListener('click', function() {

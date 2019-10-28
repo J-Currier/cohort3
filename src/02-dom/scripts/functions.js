@@ -1,28 +1,22 @@
 // import { arrowFunctionExpression } from "@babel/types";
 
 const functions = {
-    divClickFunction: () => {
-        let divPosition = event.target;
-        console.log(divPosition);
-        return 0;
-    },
+    // divClickFunction: () => {
+    //     let divPosition = event.target;
+    //     return 0;
+    // },
 
-    showButtonFunc: () => {
-        let children = olTag.children;
-        for (let element of children) {
-            console.log(element.innerHTML);
-        };
-        return 4;
+    showButtonFunc: (value) => {
+        let myString = value;
+        return myString;
 
     },
 
-    addButtonFunction: () => {
-        console.log("add button")
+    addButtonFunction: (newDiv) => {
         const newListItem = document.createElement('li');
         newListItem.innerHTML = "Next thing";
         let list = document.getElementById('olTag');
         list.insertBefore(newListItem, list.childNodes[0]);
-        return 9;
     },
 
     // Cards exercise Functions
@@ -30,7 +24,6 @@ const functions = {
 
     createNewCardFunction: () => {
         let cardNumberArray = functions.cardIdArrayFunction();
-        console.log(cardNumberArray);
         let highestCardNumber;
         if (cardNumberArray.length == 0) {
             highestCardNumber = 0;
@@ -39,7 +32,6 @@ const functions = {
         };
         
         let newCardNumber = highestCardNumber + 1;
-        console.log("New Card is", + newCardNumber);
 
         const newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'addedCards');
@@ -77,7 +69,6 @@ const functions = {
         });
 
         deletebutton.addEventListener('click', function() {
-            console.log(this.value);
             let divToDelete = document.getElementById(this.value);
             divToDelete.remove();
 
@@ -108,7 +99,7 @@ const functions = {
         leftPanelCardsID.insertBefore(newDiv, leftPanelCardsID.childNodes[0]);
     },
 
-    cardIdArrayFunction: () => {
+    cardIdArrayFunction: (leftPan) => {
         let cardChildren = leftPanelCardsID.children;
         let cardChildrenLength = document.getElementById('leftPanelCardsID').children.length
         let cardNumberArray = [];
