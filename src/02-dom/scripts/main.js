@@ -16,8 +16,11 @@ addButton.addEventListener('click', function() {
     functions.addButtonFunction();
 });
 
+// cards exercise
+
 addCardButton.addEventListener('click', function() {
-    console.log(event.target.value);
-    functions.addCardFunction();
+    functions.originalAddButton();
 });
+
+
 
