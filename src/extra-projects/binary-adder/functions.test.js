@@ -12,5 +12,9 @@ test('binaryLogic', () => {
 });
 
 test('binaryOutside', () => {
-    expect(functions.binaryOutside('010','1101')).toEqual(4);
+    expect(functions.binaryOutside('010','1101')).toEqual("1111");
+    expect(functions.binaryOutside('110110','1101')).toEqual("1000011");
+    expect(functions.binaryOutside('0','1101')).toEqual("1101");
+    expect(functions.binaryOutside('','1101101')).toEqual("1101101");
+
 });
