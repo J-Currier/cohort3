@@ -1,6 +1,25 @@
 const functions = { 
     //functions object
 
+// 2019-10-29 Daily Exercise-More Array Exercises find balance and average
+
+// write a function to receive the same array (staff) and return the total of balances
+    staffBalance: (staffObject) => {
+        let myArr = [];
+        staffObject.forEach((element) => {
+            myArr.push(element.balance);
+            return myArr;
+        });
+        let total = myArr.reduce((acc, cur) => acc + cur);
+        return total;
+
+    
+    },
+
+// write a function to receive the same array (staff) and return the average the balances
+    staffAverage: (dataObject) => {
+       return functions.staffBalance(dataObject) /dataObject.length;;
+    },
 
 // 2019-10-25 Daily Exercise-Email list
     loopStaffForEach: (dataObject) => {
@@ -9,7 +28,7 @@ const functions = {
             myArr.push(functions.emailCallBackFunction(element));
             return myArr;
         });
-        return myArr;
+        
     },
 
     loopStaffMap: (dataObject) => {

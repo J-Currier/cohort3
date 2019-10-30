@@ -1,6 +1,20 @@
 import functions from './daily.js'
 import { tsExternalModuleReference, exportAllDeclaration } from '@babel/types'
 
+// 2019-10-29 Daily Exercise-More Array Exercises find balance and average
+test('total balance', () => {
+    const staffforArray = data.staff;
+    expect(functions.staffBalance(staffforArray))
+        .toEqual(3823);
+});
+
+test('total average', () => {
+    const staffforArray = data.staff;
+    expect(functions.staffAverage(staffforArray))
+        .toBeCloseTo(546.14, 2);
+});
+
+
 // 2019-10-25 Daily Exercise-Email list
 test('email builder map callback company', () => {
     const staffEmail = functions.loopStaffMap(data.staff);
