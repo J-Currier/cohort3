@@ -5,6 +5,39 @@ import functions from "./functions.js";
 
 // });
 
+test('addAfterButtonForCards', () => {
+    const divElement = document.createElement('div');
+    divElement.setAttribute('id', "leftPanelCardsID");
+    document.body.append(divElement);
+    let card1= functions.createNewCardFunction();
+    divElement.append(card1);
+    document.getElementById('addAfter').click();
+    expect(divElement.children.length).toBe(2);
+    divElement.remove();
+});
+
+test('addbeforeButtonForCards', () => {
+    const divElement = document.createElement('div');
+    divElement.setAttribute('id', "leftPanelCardsID");
+    document.body.append(divElement);
+    let card1= functions.createNewCardFunction();
+    divElement.append(card1);
+    document.getElementById("addBefore").click();
+    expect(divElement.children.length).toBe(2);
+    divElement.remove();
+});
+
+test('deletecardButtonForCards', () => {
+    const divElement = document.createElement('div');
+    divElement.setAttribute('id', "leftPanelCardsID");
+    document.body.append(divElement);
+    let card1= functions.createNewCardFunction();
+    divElement.append(card1);
+    document.getElementById("Delete").click();
+    expect(divElement.children.length).toBe(0);
+    divElement.remove();
+});
+
 test('showButton', () => {
     expect(functions.showButtonFunc("showButton")).toBe("showButton");
 });

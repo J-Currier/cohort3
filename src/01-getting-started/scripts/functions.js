@@ -22,15 +22,13 @@ const functions = {
     // Calculator
     // Calculator
     
-    calculatorFunction: (a) => {
-        console.log("do something");
-        let typedInput = document.getElementById("calcinput").value;
-        document.getElementById("calcinput").value = "";
+    // calculatorFunction: (a) => {
+    //     let typedInput = document.getElementById("calcinput").value;
+    //     document.getElementById("calcinput").value = "";
         
-        let answer = typedinput;
-        console.log(typedInput);
+    //     let answer = typedinput;
     
-    },
+    // },
 
 
     

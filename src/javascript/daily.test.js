@@ -138,6 +138,9 @@ test('sliceEx', () => {
     expect(functions.sliceEx(["Banana", "Orange", "Lemon", "Apple", "Mango"])).toEqual(["Lemon", "Apple", "Mango"]);
 });
 
+test('splicer', () => {
+    expect(functions.splicer(["Banana", "Orange", "Lemon", "Apple", "Mango"])).toEqual(["Banana", "kiwi", "pumpkin", "grapes", "Apple", "Mango"]);
+});
 
 
 test('forEach', () => {

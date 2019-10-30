@@ -50,14 +50,14 @@ const functions = {
         addBeforebutton.setAttribute('class', 'domButtons addBefore');
         addBeforebutton.innerHTML = 'Add Before Card';
         addBeforebutton.value = newCardNumber;
-        addBeforebutton.id = newCardNumber;
+        addBeforebutton.id = "addBefore";
         newDiv.appendChild(addBeforebutton);
 
         let addAfterbutton = document.createElement('button');
         addAfterbutton.setAttribute('class', 'domButtons addAfter');
         addAfterbutton.innerHTML = 'Add Card After';
         addAfterbutton.value = newCardNumber;
-        addAfterbutton.id = newCardNumber;
+        addAfterbutton.id = 'addAfter';
         newDiv.appendChild(addAfterbutton);
 
         addAfterbutton.addEventListener('click', function(){

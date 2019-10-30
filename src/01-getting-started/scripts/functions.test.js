@@ -22,3 +22,8 @@ test('Calculator test', () => {
     expect(functions.objectTests(5-3)).toBe(2);
     expect(functions.objectTests(5/3)).toBe(2.5);
 });
+
+test('subtractTest', () => {
+    expect(functions.subtract(2,1)).toBe(1);
+    
+});
