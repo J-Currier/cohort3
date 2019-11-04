@@ -1,0 +1,79 @@
+html {
+    font-size:100%;
+    box-sizing: border-box;
+    height: 1vh;
+    text-align: center;
+    padding-top: 75px;
+    background-color: white;
+}
+
+@keyframes fade {
+    0% {
+        background-color: white;
+        color: white;
+      }
+    100% {
+        background-color: #9abaf7;
+        color: black;
+    }
+}
+
+.accountContainer {
+    /* background-color: rgb(72, 72, 235); */
+    border: 2px solid  #7892c2;
+    width: 75%;
+    height: auto;
+    background-color: #9abaf7;
+    margin: 0 auto;
+    animation: fade 2s 1;
+
+}
+
+.heading {
+    animation: fade 2s 1;
+    font-size: 2.5em;
+    padding: 35px;
+    text-decoration: underline;
+}
+.two {
+    text-decoration: none;
+    font-size: 1.5em;
+    padding-top: 0px;
+
+}
+
+.infoLines {
+    animation: fade 2s 1;
+    padding: 30px;
+    font-size: 1.2em;
+}
+.myButtons {
+    height: 30px;
+	background-color:#535fdb;
+	border-radius:7px;
+	border:1px solid #29298f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f34d4;
+}
+.myButtons:hover {
+	background-color:#2a35b0;
+}
+.myButtons:active {
+	position:relative;
+	top:1px;
+}
+.depositLineContainer {
+    padding: 10px;
+    line-height: 200%;
+}
+
+.withdrawlLineContainer {
+    padding: 10px;
+    line-height: 200%;
+}

@@ -9,9 +9,29 @@
     <title>03-objects</title>
 </head>
 <body>
-
+    <div class="accountContainer">
+        <div class='heading' id="accountName">Savings Account</div>
+        <div class= 'heading two' id='currentBalance'>Current Balance:</div>
+        <div class='infoLines'>
+            <div id='depositLine' class='depositLineContainer'>
+                Enter the amount to deposit: 
+                <input type="text" id='depositAmount' placeholder='Deposit Amount'></br>
+                <button id='depositButton' class='myButtons'>Deposit</button>
+            </div>
+            <div id='withdrawlLine' class='withdrawlLineContainer'>
+                    Enter the amount to withdraw:   
+                    <input type="text" id='withdrawAmount' placeholder='Withdrawl Amount'></br>
+                <button id='withdrawlButton' class='myButtons' >Withdraw</button>
+            </div>
     
-    <script type="module" src="scripts\main.js"></script>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="module" src="scripts\index.js"></script>
 
 </body>
 </html>
