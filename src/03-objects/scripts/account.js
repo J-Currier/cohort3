@@ -18,4 +18,28 @@ class Account {
         return this.balance;
     }
 }
-export { Account }
+
+class AccountController {
+
+    createNewAccount(accountName, startingBalance) {
+        console.log('new accoutn created')
+    }
+
+    removeAccount(accountName) {
+        console.log("account removed");
+    }
+
+    sumAccounts() {
+        console.log('Account total');
+    }
+
+    highestBalance() {
+        console.log('Account with highest Balance');
+    }
+
+    lowestBalance() {
+        console.log('Account with lowest balance');
+    }
+
+}
+export { Account, AccountController }

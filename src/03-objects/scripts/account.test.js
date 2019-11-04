@@ -1,4 +1,4 @@
-import { Account } from "./account.js";
+import { Account, AccountController } from "./account.js";
 
 
 test('account check', () => {
@@ -8,4 +8,9 @@ test('account check', () => {
     expect(savings.balance).toEqual(35);
     savings.withdraw(30);
     expect(savings.balance).toEqual(5);
+});
+
+test('balance', () => {
+    const savings2 = new Account("savings2", 25);
+    expect(savings2.balance).toEqual(25);
 });
