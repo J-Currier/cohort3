@@ -14,3 +14,8 @@ test('balance', () => {
     const savings2 = new Account("savings2", 25);
     expect(savings2.balance).toEqual(25);
 });
+
+test('account controller', () => {
+    // AccountController.creatNewAccount('chequing', 100)
+    expect(AccountController.createNewAccount('chequing', 100)).toEqual(100);
+});

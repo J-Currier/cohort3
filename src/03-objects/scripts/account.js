@@ -20,9 +20,10 @@ class Account {
 }
 
 class AccountController {
-
+    constructor()
     createNewAccount(accountName, startingBalance) {
         console.log('new accoutn created')
+        return 100;
     }
 
     removeAccount(accountName) {

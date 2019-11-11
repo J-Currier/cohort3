@@ -14,3 +14,5 @@ withdrawlButton.addEventListener('click', function() {
     document.getElementById('currentBalance').innerHTML = `Current Balance: $ ${parseInt(savingsAccount.balance).toFixed(2)}`
     document.getElementById("withdrawAmount").value = '';
 });
+
+

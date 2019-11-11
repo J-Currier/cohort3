@@ -1,6 +1,18 @@
 const functions = { 
     //functions object
 
+//2019-11-08 Daily Exercise Callback Exercise Part 1
+    sortWest: (peopleArr) => {
+        let count = 0;
+        for (let i = 0; i < peopleArr.length; i++) {
+            if (peopleArr[i].province === "BC" || peopleArr[i].province === "AB") {
+                count ++;
+                // makeList(peopleArr[i]);
+            };
+        };
+        return count;
+    },
+
 // 2019-10-29 Daily Exercise-More Array Exercises find balance and average
 
 // write a function to receive the same array (staff) and return the total of balances
