@@ -3,23 +3,70 @@ html {
     box-sizing: border-box;
     height: 1vh;
     text-align: center;
-    padding-top: 75px;
-    background-color: white;
+    padding-top: -0px;
+    font-family: 'Quicksand', sans-serif;
+    /* background-color: rgba(50, 176, 235, 0.89); */
 }
 
 @keyframes fade {
     0% {
         background-color: white;
         color: white;
-      }
-    100% {
         background-color: #9abaf7;
         color: black;
     }
 }
 
-.accountContainer {
-    /* background-color: rgb(72, 72, 235); */
+.myHeading {
+    font-size: 3.5em;
+    background-color: rgba(135, 201, 231, 0.89);
+    padding: 30px;
+    border-bottom: white solid;
+
+}
+.addAccountSection {
+    background-color: rgba(50, 176, 235, 0.89);
+    padding: 20px;
+    font-size: 1.5em;
+    line-height: 1.7;
+}
+
+.addNewAccountCard {
+    margin: 0 auto;
+    background-color: rgba(185, 227, 247, 0.89);
+    border: white solid;
+    border-radius:19px;
+    width: 75%;
+    min-width: 400px;
+    padding: 20px;
+}
+
+.buttonDiv {
+    padding: 35px;
+}
+.buttons {
+    
+	background-color:#ff8800;
+	border-radius:19px;
+	border:2px solid #ff9d2c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	padding:13px 28px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ff8800;
+}
+.buttons:hover {
+	background-color:#4357ee;
+}
+.buttons:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* .accountContainer {
     border: 2px solid  #7892c2;
     width: 75%;
     height: auto;
@@ -76,4 +123,4 @@ html {
 .withdrawlLineContainer {
     padding: 10px;
     line-height: 200%;
-}
+} */

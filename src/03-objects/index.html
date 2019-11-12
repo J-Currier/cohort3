@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500&display=swap" rel="stylesheet">
 
     <title>03-objects</title>
 </head>
 <body>
-    <div class="accountContainer">
+    <div class='myHeading'>Bank o' Jen</div>
+    <div class='addAccountSection'>
+        <div class='addNewAccountCard'>
+            To add a new account:</br>
+            Give your new account a name <input id='newAccountName' type='text' placeholder="New account name"></br>
+            Enter the starting balance <input id='newAccountBalance' type='text' placeholder='New account balance'></br>
+            <div class='buttonDiv'><button class='buttons' id='addAccountButton'>Make a New Account!</button></div>
+        </div>
+    </div>
+    <div class='myAccountCards'></div>
+    <!-- <div class="accountContainer">
         <div class='heading' id="accountName">Savings Account</div>
         <div class= 'heading two' id='currentBalance'>Current Balance:</div>
         <div class='infoLines'>
@@ -28,7 +39,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 
     <script type="module" src="scripts\index.js"></script>
