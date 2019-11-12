@@ -5,23 +5,17 @@ html {
     text-align: center;
     padding-top: -0px;
     font-family: 'Quicksand', sans-serif;
-    /* background-color: rgba(50, 176, 235, 0.89); */
+    background-color: rgba(50, 176, 235);
 }
 
-@keyframes fade {
-    0% {
-        background-color: white;
-        color: white;
-        background-color: #9abaf7;
-        color: black;
-    }
-}
+
 
 .myHeading {
     font-size: 3.5em;
     background-color: rgba(135, 201, 231, 0.89);
     padding: 30px;
     border-bottom: white solid;
+    border-radius: 5px;
 
 }
 .addAccountSection {
@@ -45,7 +39,7 @@ html {
     padding: 35px;
 }
 .buttons {
-    
+    margin: 5px;
 	background-color:#ff8800;
 	border-radius:19px;
 	border:2px solid #ff9d2c;
@@ -63,6 +57,40 @@ html {
 .buttons:active {
 	position:relative;
 	top:1px;
+}
+
+.myAccountCards {
+    background-color: rgba(50, 176, 235, 0.89);
+    /* min-height: 400px; */
+    height: auto;
+    display: grid;
+    /* grid-area: 3 / 4 / 6 / 5; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    
+
+
+}
+
+.cards {
+    background-color: rgba(185, 227, 247, 0.89);
+    border: white solid;
+    border-radius:19px;
+    padding: 10px;
+    height: auto;
+
+}
+
+
+.accountCardHeader {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.accountCardBalance {
+    padding: 15px;
 }
 
 
