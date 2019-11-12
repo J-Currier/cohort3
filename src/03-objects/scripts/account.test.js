@@ -16,6 +16,16 @@ test('balance', () => {
 });
 
 test('account controller', () => {
-    // AccountController.creatNewAccount('chequing', 100)
-    expect(AccountController.createNewAccount('chequing', 100)).toEqual(100);
+    const PeterPan = new AccountController('Peter', 'Pan');
+    PeterPan.createNewAccount('savings', 100);
+    PeterPan.createNewAccount('chequeing', 100);
+    expect(PeterPan.clientName).toEqual('Peter Pan');
+    expect(PeterPan.accountList.length).toEqual(2);
+    PeterPan.removeAccount('chequeing');
+    expect(PeterPan.accountList.length).toEqual(1);
+    PeterPan.createNewAccount('cheq2',220);
+    expect(PeterPan.sumAccounts()).toEqual(320);
+    expect(PeterPan.highestBalance()).toEqual(220);
+    expect(PeterPan.lowestBalance()).toEqual(100);
+
 });

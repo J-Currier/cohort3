@@ -1,7 +1,7 @@
 
 class Account {
     constructor(accountName, balance) {
-        this.accountName = accountName
+        this.accountName = accountName;
         this.balance = balance;
     }
 
@@ -20,26 +20,42 @@ class Account {
 }
 
 class AccountController {
-    constructor()
-    createNewAccount(accountName, startingBalance) {
-        console.log('new accoutn created')
-        return 100;
+    constructor(firstName, lastName) {
+            this.clientName = firstName + ' ' + lastName;
+            this.accountList = [];
+            console.log(this);
     }
 
-    removeAccount(accountName) {
-        console.log("account removed");
+    createNewAccount(accountName, startingBalance) {
+        this.accountList.push(new Account(accountName, startingBalance));
+        // filter(account => account.name === name)[0]
+    }
+
+    removeAccount(deleteAccount) {
+        this.accountList = this.accountList.filter((arr) => arr.accountName != deleteAccount);
     }
 
     sumAccounts() {
-        console.log('Account total');
+        let myArr = [];
+        this.accountList.forEach((element) => {
+            myArr.push(element.balance);
+            return myArr;
+        });
+        let accountTotals= myArr.reduce((acc, cur) => acc + cur);
+        return accountTotals;
     }
 
     highestBalance() {
-        console.log('Account with highest Balance');
+        let highestValue = Math.max.apply(Math, this.accountList.map(function(param){return param.balance;}));
+        let highestAccount = this.accountList.find(function(param){ return param.balance == highestValue; });
+        return (highestAccount.balance);
     }
 
     lowestBalance() {
-        console.log('Account with lowest balance');
+        let lowestValue = Math.min.apply(Math, this.accountList.map(function(param){return param.balance;}));
+        let lowestAccount = this.accountList.find(function(param){ return param.balance == lowestValue; });
+        return (lowestAccount.balance);
+
     }
 
 }
