@@ -51,10 +51,11 @@ const people = [
 	{fname:"Tylor", lname:"Torres", province:"MN", age:98}
 ];
 
-test('Western Provences', () => {
-    
-    expect(functions.sortWest(people))
+test('Western Provinces', () => {
+    const westNameArr = functions.sortWest(people);
+    expect(westNameArr.length)
         .toEqual(22);
+    expect(westNameArr[0]).toEqual("Alex Smith");
 });
 
 // 2019-10-29 Daily Exercise-More Array Exercises find balance and average
