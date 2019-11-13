@@ -1,6 +1,9 @@
 const functions = {
 
-    createNewCardFunction: (newAccountName, newAccountBalance) => {
+    createNewCardFunction: (newAccountName, newAccountBalance, newUser) => {
+        console.log(newUser);
+        
+
         let intAccountBalance = parseInt(newAccountBalance);
         let currencyBalance = intAccountBalance.toFixed(2);
 
@@ -61,22 +64,26 @@ const functions = {
         deletebutton.setAttribute('class', 'buttons');
         deletebutton.innerHTML = 'DELETE';
         let newDeleteId = newAccountName + 'Delete';
-        deletebutton.id = "newDeleteId";
+        deletebutton.id = newDeleteId;
         deletebutton.value = newAccountName;
         newAccountCard.appendChild(deletebutton);
 
 
 
         depositbutton.addEventListener('click', function(){
-            functions.depositFunction(this.value);
+            let amountId = this.value + inputField;
+            let amount = document.getElementById(amountId);
+            functions.depositFunction(this.value, amount);
         });
 
         withdrawbutton.addEventListener('click', function(){
-            functions.withdrawFunction(this.value);
+            let amountId = this.value + inputField;
+            let amount = document.getElementById(amountId);
+            functions.withdrawFunction(this.value, amount);
         });
 
         deletebutton.addEventListener('click', function() {
-                functions.deleteFunction(this.value);
+            functions.deleteFunction(this.value);
             let divToDelete = document.getElementById(this.value);
             divToDelete.remove();
         });
@@ -84,11 +91,13 @@ const functions = {
 
     },
 
-    depositFunction: (accountName) => {
+    depositFunction: (accountName, amount) => {
+
         console.log("the deposit function")
+        console.log(newUser);
     },
 
-    withdrawFunction: (accountName) => {
+    withdrawFunction: (accountName, amount) => {
         console.log("the wd function")
 
     },

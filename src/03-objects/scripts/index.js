@@ -1,17 +1,17 @@
 import { Account, AccountController } from "./account.js";
 import functions from './accountDOM.js';
-// import { functionExpression } from "@babel/types";
 
 const newUser = new AccountController('New', 'User');
+console.log(newUser);
 
 addAccountButton.addEventListener('click', function() {
-    let newAccountName= document.getElementById('newAccountName').value
-    let newAccountBalance = document.getElementById('newAccountBalance').value
+    let newAccountName= document.getElementById('newAccountName').value;
+    let newAccountBalance = document.getElementById('newAccountBalance').value;
     document.getElementById('newAccountName').value = '';
     document.getElementById('newAccountBalance').value = '';
-    newUser.createNewAccount(newAccountName, newAccountBalance)
+    newUser.createNewAccount(newAccountName, newAccountBalance);
     console.table(newUser.accountList);
-    let newCardDiv = functions.createNewCardFunction(newAccountName, newAccountBalance);
+    let newCardDiv = functions.createNewCardFunction(newAccountName, newAccountBalance, newUser);
     myAccountCardsId.insertBefore(newCardDiv, myAccountCardsId.childNodes[0]);
 });
 
@@ -20,3 +20,4 @@ addAccountButton.addEventListener('click', function() {
 
 
 
+export default newUser;
