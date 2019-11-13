@@ -1,18 +1,22 @@
 import { Account, AccountController } from "./account.js";
+import functions from './accountDOM.js';
 // import { functionExpression } from "@babel/types";
 
-let savingsAccount = new Account('Savings Account', 0);
+const newUser = new AccountController('New', 'User');
 
-depositButton.addEventListener('click', function() {
-    savingsAccount.deposit(document.getElementById('depositAmount').value)
-    document.getElementById('currentBalance').innerHTML = `Current Balance: $ ${parseInt(savingsAccount.balance).toFixed(2)}`
-    document.getElementById('depositAmount').value = "";
+addAccountButton.addEventListener('click', function() {
+    let newAccountName= document.getElementById('newAccountName').value
+    let newAccountBalance = document.getElementById('newAccountBalance').value
+    document.getElementById('newAccountName').value = '';
+    document.getElementById('newAccountBalance').value = '';
+    newUser.createNewAccount(newAccountName, newAccountBalance)
+    console.table(newUser.accountList);
+    let newCardDiv = functions.createNewCardFunction(newAccountName, newAccountBalance);
+    myAccountCardsId.insertBefore(newCardDiv, myAccountCardsId.childNodes[0]);
 });
 
-withdrawlButton.addEventListener('click', function() {
-    savingsAccount.withdraw(document.getElementById('withdrawAmount').value)
-    document.getElementById('currentBalance').innerHTML = `Current Balance: $ ${parseInt(savingsAccount.balance).toFixed(2)}`
-    document.getElementById("withdrawAmount").value = '';
-});
+
+
+
 
 
