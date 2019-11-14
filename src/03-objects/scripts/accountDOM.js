@@ -14,7 +14,7 @@ const functions = {
         const newAccountCard = document.createElement('div');
         newAccountCard.setAttribute('class', 'cards');
         newAccountCard.setAttribute('id', newAccountName);
-        newAccountCard.setAttribute('value', counter);
+        newAccountCard.setAttribute('key', counter);
         console.log(newAccountCard);
 
         let titleDiv = document.createElement('div');
@@ -31,14 +31,10 @@ const functions = {
         balanceDiv.innerHTML = `Your balance is $${currencyBalance}`;
         newAccountCard.appendChild(balanceDiv);
 
-        let newCardDiv = document.createElement('div');
-        newCardDiv.setAttribute('class', 'accountCardButtons')
-        let newCardDivId = newAccountName + 'CardButtons';
-        newCardDiv.setAttribute('id', newCardDivId);
-        newAccountCard.appendChild(newCardDiv);
-
         let inputField = document.createElement('input');
-        inputField.setAttribute('class', 'amountInput')
+        inputField.setAttribute('class', 'amountInput');
+        inputField.setAttribute('type', 'text')
+
         let newInputId = newAccountName + 'input';
         inputField.setAttribute('id', newInputId);
         inputField.setAttribute('placeholder', 'enter amount');

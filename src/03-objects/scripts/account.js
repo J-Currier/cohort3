@@ -3,12 +3,12 @@ import functions from './accountDOM.js';
 class Account {
     constructor(accountName, balance, key) {
         this.accountName = accountName;
-        this.balance = balance;
+        this.balance = parseInt(balance);
         this.key = Number(key);
     }
 
     deposit(depositAmount) {
-        this.balance = this.balance + depositAmount;
+        this.balance = this.balance + parseInt(depositAmount);
 
     }
 

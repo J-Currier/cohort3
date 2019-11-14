@@ -1,12 +1,25 @@
 import { Account, AccountController } from "./account.js";
 import functions from './accountDOM.js';
+// import { conditionalExpression } from "@babel/types";
 
 const newUser = new AccountController('New', 'User');
 console.log(newUser);
 
 
 myAccountCardsId.addEventListener('click', function(){
-    console.log(this.value);
+    let accountKey = parseInt(event.target.parentNode.getAttribute('key'));
+
+    if (event.target.value == 'deposit') {
+        let amount = event.target.parentNode.children[2].value;
+        let accountArr = newUser.accountList.map(function(param){return param.key;});  
+        let index = accountArr.indexOf(accountKey);
+        newUser.accountList[index].deposit(amount);
+        
+        depositbutton.innerHTML = 'Deposit';
+
+
+    };
+    
 
 
 });
