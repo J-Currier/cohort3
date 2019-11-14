@@ -1,8 +1,10 @@
+import functions from './accountDOM.js';
 
 class Account {
-    constructor(accountName, balance) {
+    constructor(accountName, balance, key) {
         this.accountName = accountName;
         this.balance = balance;
+        this.key = Number(key);
     }
 
     deposit(depositAmount) {
@@ -23,11 +25,15 @@ class AccountController {
     constructor(firstName, lastName) {
             this.clientName = firstName + ' ' + lastName;
             this.accountList = [];
+            this.counter = 0;
             console.log(this);
     }
 
     createNewAccount(accountName, startingBalance) {
-        this.accountList.push(new Account(accountName, startingBalance));
+
+        this.accountList.push(new Account(accountName, startingBalance, this.counter));
+        functions.createNewCardFunction(accountName, startingBalance, this.counter);
+        this.counter ++;
         // filter(account => account.name === name)[0]
     }
 

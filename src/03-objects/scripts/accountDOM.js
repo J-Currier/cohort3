@@ -1,7 +1,9 @@
+import newUser from './index.js';
+
+
 const functions = {
 
-    createNewCardFunction: (newAccountName, newAccountBalance, newUser) => {
-        console.log(newUser);
+    createNewCardFunction: (newAccountName, newAccountBalance, counter) => {
         
 
         let intAccountBalance = parseInt(newAccountBalance);
@@ -12,6 +14,8 @@ const functions = {
         const newAccountCard = document.createElement('div');
         newAccountCard.setAttribute('class', 'cards');
         newAccountCard.setAttribute('id', newAccountName);
+        newAccountCard.setAttribute('value', counter);
+        console.log(newAccountCard);
 
         let titleDiv = document.createElement('div');
         titleDiv.setAttribute('class', 'accountCardHeader')
@@ -46,48 +50,28 @@ const functions = {
         let depositbutton = document.createElement('button');
         depositbutton.setAttribute('class', 'buttons');
         depositbutton.innerHTML = 'Deposit';
-        let newDepositId = newAccountName + 'deposit';
-        depositbutton.id = newDepositId;
-        depositbutton.value = newAccountName;
+        depositbutton.value = 'deposit';
         newAccountCard.appendChild(depositbutton);
 
 
         let withdrawbutton = document.createElement('button');
         withdrawbutton.setAttribute('class', 'buttons');
         withdrawbutton.innerHTML = 'Withdraw';
-        let newWithdrawId = newAccountName + 'Withdraw';
-        withdrawbutton.id = newWithdrawId;
-        withdrawbutton.value = newAccountName;
+        withdrawbutton.value = 'withdraw';
         newAccountCard.appendChild(withdrawbutton);
 
         let deletebutton = document.createElement('button');
         deletebutton.setAttribute('class', 'buttons');
         deletebutton.innerHTML = 'DELETE';
-        let newDeleteId = newAccountName + 'Delete';
-        deletebutton.id = newDeleteId;
-        deletebutton.value = newAccountName;
+        deletebutton.value = 'delete';
         newAccountCard.appendChild(deletebutton);
 
 
 
-        depositbutton.addEventListener('click', function(){
-            let amountId = this.value + inputField;
-            let amount = document.getElementById(amountId);
-            functions.depositFunction(this.value, amount);
-        });
+       
+        myAccountCardsId.insertBefore(newAccountCard, myAccountCardsId.childNodes[0]);
 
-        withdrawbutton.addEventListener('click', function(){
-            let amountId = this.value + inputField;
-            let amount = document.getElementById(amountId);
-            functions.withdrawFunction(this.value, amount);
-        });
-
-        deletebutton.addEventListener('click', function() {
-            functions.deleteFunction(this.value);
-            let divToDelete = document.getElementById(this.value);
-            divToDelete.remove();
-        });
-        return newAccountCard;
+        // return newAccountCard;
 
     },
 
@@ -106,6 +90,8 @@ const functions = {
         console.log("the delete function")
 
     },
+
+    
 
 
 
