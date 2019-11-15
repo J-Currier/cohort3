@@ -18,7 +18,6 @@ const functions = {
         let nameList = westArr.map((obj) => {
             let toAdd = obj.fname + ' ' + obj.lname;
             return toAdd;
-            console.log(obj);
         })
         // let toAdd = westArr.fname + ' ' + westArr.lname;
         // westArr.push(toAdd);

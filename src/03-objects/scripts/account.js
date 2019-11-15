@@ -16,7 +16,7 @@ class Account {
         this.balance = this.balance - withdrawlAmount;
     }
 
-    balance() {
+    balancer() {
         return this.balance;
     }
 }
