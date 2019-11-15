@@ -47,12 +47,31 @@ addAccountButton.addEventListener('click', function() {
     document.getElementById('newAccountName').value = '';
     document.getElementById('newAccountBalance').value = '';
     newUser.createNewAccount(newAccountName, newAccountBalance);
-    console.table(newUser.accountList);
-    // let newCardDiv = functions.createNewCardFunction(newAccountName, newAccountBalance, newUser);
-    // myAccountCardsId.insertBefore(newCardDiv, myAccountCardsId.childNodes[0]);
-    
+    let newAccountCard = functions.createNewCardFunction( newAccountName, newAccountBalance, newUser.key);
+    console.log(myAccountCardsId, 'myAccoutnscardid');
+    console.log(myAccountCardsId.childNodes, 'childn');
+    console.log(myAccountCardsId.childNodes[0], "node1")
+    myAccountCardsId.insertBefore(newAccountCard, myAccountCardsId.childNodes[0]);
 
+    console.table(newUser.accountList);
 });
+
+highestAccount.addEventListener('click', function() {
+    let highestAccount = newUser.highestBalance();
+    textdisplay.innerHTML = `Your <b>${highestAccount.accountName}</b> account is your largest asset with a balance of <b>$${highestAccount.balance.toFixed(2)}</b>`;
+});
+
+lowestAccount.addEventListener('click', function() {
+    let lowestAccount = newUser.lowestBalance();
+    textdisplay.innerHTML = `Your <b>${lowestAccount.accountName} </b>account is your smallest asset with a balance of <b>$${lowestAccount.balance.toFixed(2)}</b>`;
+});
+
+sumAccount.addEventListener('click', function() {
+    console.log('sum');
+    let totalAccount = newUser.sumAccounts();
+    textdisplay.innerHTML = `The total amount of your assests is <b>$${totalAccount}</b>`;
+});
+
 
 
 

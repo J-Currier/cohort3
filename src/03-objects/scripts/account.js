@@ -32,7 +32,7 @@ class AccountController {
     createNewAccount(accountName, startingBalance) {
 
         this.accountList.push(new Account(accountName, startingBalance, this.counter));
-        functions.createNewCardFunction(accountName, startingBalance, this.counter);
+        // functions.createNewCardFunction(accountName, startingBalance, this.counter);
         this.counter ++;
         // filter(account => account.name === name)[0]
     }
@@ -48,20 +48,20 @@ class AccountController {
             return myArr;
         });
         let accountTotals= myArr.reduce((acc, cur) => acc + cur);
-        return accountTotals;
+        return accountTotals.toFixed(2);
     }
 
     highestBalance() {
         let highestValue = Math.max.apply(Math, this.accountList.map(function(param){return param.balance;}));
         // add filter to create arr of savings with highest balances
         let highestAccount = this.accountList.find(function(param){ return param.balance == highestValue; });
-        return (highestAccount.balance);
+        return (highestAccount);
     }
 
     lowestBalance() {
         let lowestValue = Math.min.apply(Math, this.accountList.map(function(param){return param.balance;}));
         let lowestAccount = this.accountList.find(function(param){ return param.balance == lowestValue; });
-        return (lowestAccount.balance);
+        return (lowestAccount);
 
     }
 

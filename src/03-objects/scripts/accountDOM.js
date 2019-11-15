@@ -1,4 +1,3 @@
-import newUser from './index.js';
 
 
 const functions = {
@@ -62,30 +61,10 @@ const functions = {
         deletebutton.value = 'delete';
         newAccountCard.appendChild(deletebutton);
 
-
-
-       
-        myAccountCardsId.insertBefore(newAccountCard, myAccountCardsId.childNodes[0]);
-
-        // return newAccountCard;
-
+        return newAccountCard;
     },
 
-    depositFunction: (accountName, amount) => {
-
-        console.log("the deposit function")
-        console.log(newUser);
-    },
-
-    withdrawFunction: (accountName, amount) => {
-        console.log("the wd function")
-
-    },
-
-    deleteFunction: (accountName) => {
-        console.log("the delete function")
-
-    },
+   
 
     
 

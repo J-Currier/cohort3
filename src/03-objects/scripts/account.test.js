@@ -16,7 +16,11 @@ test('balance', () => {
 });
 
 test('account controller', () => {
+    const divElement = document.createElement('div');
+    divElement.setAttribute('id', "myAccountCardsId");
+
     const PeterPan = new AccountController('Peter', 'Pan');
+
     PeterPan.createNewAccount('savings', 100);
     PeterPan.createNewAccount('chequeing', 100);
     expect(PeterPan.clientName).toEqual('Peter Pan');
@@ -24,8 +28,11 @@ test('account controller', () => {
     PeterPan.removeAccount('chequeing');
     expect(PeterPan.accountList.length).toEqual(1);
     PeterPan.createNewAccount('cheq2',220);
-    expect(PeterPan.sumAccounts()).toEqual(320);
-    expect(PeterPan.highestBalance()).toEqual(220);
-    expect(PeterPan.lowestBalance()).toEqual(100);
+    expect(PeterPan.sumAccounts()).toStrictEqual('320.00');
+    let highestBallance = PeterPan.highestBalance();
+    expect(highestBallance.balance).toEqual(220.00);
+    let lowestBalanceA = PeterPan.lowestBalance();
+    console.log(lowestBalanceA, 'test');
+    expect(lowestBalanceA.balance).toEqual(100.00);
 
 });
