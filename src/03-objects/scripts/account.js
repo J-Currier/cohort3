@@ -3,7 +3,7 @@ import functions from './accountDOM.js';
 class Account {
     constructor(accountName, balance, key) {
         this.accountName = accountName;
-        this.balance = parseInt(balance);
+        this.balance = parseFloat(balance);
         this.key = Number(key);
     }
 
@@ -53,6 +53,7 @@ class AccountController {
 
     highestBalance() {
         let highestValue = Math.max.apply(Math, this.accountList.map(function(param){return param.balance;}));
+        // add filter to create arr of savings with highest balances
         let highestAccount = this.accountList.find(function(param){ return param.balance == highestValue; });
         return (highestAccount.balance);
     }

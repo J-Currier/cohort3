@@ -6,7 +6,7 @@ const functions = {
     createNewCardFunction: (newAccountName, newAccountBalance, counter) => {
         
 
-        let intAccountBalance = parseInt(newAccountBalance);
+        let intAccountBalance = parseFloat(newAccountBalance);
         let currencyBalance = intAccountBalance.toFixed(2);
 
         
