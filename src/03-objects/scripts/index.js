@@ -46,11 +46,11 @@ addAccountButton.addEventListener('click', function() {
     let newAccountBalance = parseFloat(document.getElementById('newAccountBalance').value);
     document.getElementById('newAccountName').value = '';
     document.getElementById('newAccountBalance').value = '';
+    let newAccountCard = functions.createNewCardFunction( newAccountName, newAccountBalance, newUser.counter);
+
     newUser.createNewAccount(newAccountName, newAccountBalance);
-    let newAccountCard = functions.createNewCardFunction( newAccountName, newAccountBalance, newUser.key);
-    console.log(myAccountCardsId, 'myAccoutnscardid');
-    console.log(myAccountCardsId.childNodes, 'childn');
-    console.log(myAccountCardsId.childNodes[0], "node1")
+    console.log(newUser.accountList.length);
+    // let newAccountCard = functions.createNewCardFunction( newAccountName, newAccountBalance, this.key);
     myAccountCardsId.insertBefore(newAccountCard, myAccountCardsId.childNodes[0]);
 
     console.table(newUser.accountList);
