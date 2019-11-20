@@ -12,7 +12,7 @@ const functions = {
         };
         return myArr;
     },
-
+// async function
 };
 
 export default functions;
