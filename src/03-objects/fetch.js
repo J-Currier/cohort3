@@ -54,6 +54,19 @@ const functions = {
         console.log(functions.getFirstName(data));
         console.log(functions.getAllFirstNames(data));
     },
+
+    
 }
+
+const me = { 
+    "name": "Jen", 
+    "surname": "C", 
+    "gender": "Female", 
+    "region": "Canada" 
+};
+
+const sMe = JSON.stringify(me);
+
+
 
 // export default functions;
