@@ -23,7 +23,24 @@ class City {
         this.population = this.population - parseInt(popDecline);
     }
 
-
+    howBig() {
+        if (this.population > 100000) {
+            return 'City'
+        }
+        if (this.population > 19999 && this.population < 100001) {
+            return 'Large Town'
+        }
+        if (this.population > 999 && this.population < 20000) {
+            return 'Town'
+        }
+        if (this.population > 100 && this.population < 1000) {
+            return 'Village'
+        }
+        if (this.population < 101) {
+            return 'Hamlet'
+        }
+ 
+    }
 
 //     withdraw(withdrawlAmount) {
 //         this.balance = this.balance - withdrawlAmount;
