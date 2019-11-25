@@ -41,61 +41,60 @@ class City {
         }
  
     }
+}
 
-//     withdraw(withdrawlAmount) {
-//         this.balance = this.balance - withdrawlAmount;
-//     }
+    
+class Community {
+    constructor(communityName) {
+            this.communityName = communityName;
+            this.cityList = [];
+            this.counter = 0;
+    }
 
-//     balancer() {
-//         return this.balance;
-//     }
-// }
+    createNewCity(name, latitude, longitude, population) {
 
-// class AccountController {
-//     constructor(firstName, lastName) {
-//             this.clientName = firstName + ' ' + lastName;
-//             this.accountList = [];
-//             this.counter = 0;
-//             console.log(this);
-//     }
+        this.cityList.push(new City(name, latitude, longitude, population, this.counter));
+        this.counter ++;
+    }
 
-//     createNewAccount(accountName, startingBalance) {
+    removeCity(deleteCity) {
+        this.cityList = this.cityList.filter((arr) => arr.name != deleteCity);
+    }
 
-//         this.accountList.push(new Account(accountName, startingBalance, this.counter));
-//         // functions.createNewCardFunction(accountName, startingBalance, this.counter);
-//         this.counter ++;
-//         // filter(account => account.name === name)[0]
-//     }
+    getPopulation() {
+        let myArr = [];
+        this.cityList.forEach((element) => {
+            myArr.push(element.population);
+            return myArr;
+        });
+        let populationTotal= myArr.reduce((acc, cur) => acc + cur);
+        return populationTotal;
+    }
 
-//     removeAccount(deleteAccount) {
-//         this.accountList = this.accountList.filter((arr) => arr.accountName != deleteAccount);
-//     }
+    mostNorthern() {
+        let mostNorthLat = Math.max.apply(Math, this.cityList.map(function(param){return param.latitude;}));
+        let mostNorthCity = this.cityList.find(function(param){ return param.latitude == mostNorthLat });
+        return (mostNorthCity);
+    }
 
-//     sumAccounts() {
-//         let myArr = [];
-//         this.accountList.forEach((element) => {
-//             myArr.push(element.balance);
-//             return myArr;
-//         });
-//         let accountTotals= myArr.reduce((acc, cur) => acc + cur);
-//         return accountTotals.toFixed(2);
-//     }
+    mostSouthern() {
+        let mostSouthLat = Math.min.apply(Math, this.cityList.map(function(param){return param.latitude;}));
+        let mostSouthCity = this.cityList.find(function(param){ return param.latitude == mostSouthLat; });
+        return (mostSouthCity);
 
-//     highestBalance() {
-//         let highestValue = Math.max.apply(Math, this.accountList.map(function(param){return param.balance;}));
-//         // add filter to create arr of savings with highest balances
-//         let highestAccount = this.accountList.find(function(param){ return param.balance == highestValue; });
-//         return (highestAccount);
-//     }
+    }
 
-//     lowestBalance() {
-//         let lowestValue = Math.min.apply(Math, this.accountList.map(function(param){return param.balance;}));
-//         let lowestAccount = this.accountList.find(function(param){ return param.balance == lowestValue; });
-//         return (lowestAccount);
-
-//     }
+    whichSphere(cityName) {
+        let cityToCheck = this.cityList.find(function(param){ return param.name == cityName; });
+        if (cityToCheck.latitude < 0) {
+            return 'Southern Hemisphere'
+        }
+        if (cityToCheck.latitude >= 0) {
+            return 'Northern Hemisphere'
+        }
+    }
 
 }
 
 
-export { City }
+export { City, Community }
