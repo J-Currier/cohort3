@@ -31,10 +31,21 @@ test('community controller', () => {
     expect(mostSouth.name).toEqual("Conquista do Oeste");
     expect(myCommunity.whichSphere('Paris')).toEqual("Northern Hemisphere");
     expect(myCommunity.whichSphere('Conquista do Oeste')).toEqual("Southern Hemisphere");
-
-
-//     let lowestBalanceA = PeterPan.lowestBalance();
-//     console.log(lowestBalanceA, 'test');
-//     expect(lowestBalanceA.balance).toEqual(100.00);
-
 });
+
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',    
+        mode: 'cors',       
+        cache: 'no-cache',  
+        credentials: 'same-origin', 
+        headers: {
+            'Content-Type': 'application/json'
+            
+        },
+        redirect: 'follow',         
+        referrer: 'no-referrer',    
+        body: JSON.stringify(data)  
+    });
+    return await response.json();   
+}
