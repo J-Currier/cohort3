@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500&display=swap" rel="stylesheet">
+
+    <title>03-objects</title>
+</head>
+<body>
+    <div class='myHeading'>My Community</div>
+    <div class='addAccountSection'>
+        <div class='addNewAccountCard'>
+            To add a new city:</br>
+            Give your new city a name <input id='newityName' type='text' placeholder="New city name"></br>
+            Enter the starting population <input id='newCityPopulation' type='text' placeholder='New city population'></br>
+            Enter the latitude <input id='newCityLatitude' type='text' placeholder='New city latitude'></br>
+            Enter the longitude <input id='newCityLongitude' type='text' placeholder='New city longitude'></br>
+
+            <div class='buttonDiv'><button class='buttons' id='addCityButton'>Make a New City!</button></div>
+            <div id='displayArea'>
+                <div id='textdisplay'></div>
+                <button class='buttons' id='mostNortherly'>Northern Most City</button>
+                <button class='buttons' id='mostSouthernly'>Southern Most City</button>
+                <button class='buttons' id='totalPop'>Total Population</button>
+            </div>
+        </div>
+    </div>
+    <div class='myAccountCards' id='myCityCardsId'>
+    </div>
+    <script type="module" src="scripts\indexCity.js"></script>
+
+</body>
+</html>

@@ -2,6 +2,11 @@ const functions = {
     //functions object
 
 // callback part 2 
+// Based on callback exercise, part 1, now write a function 
+// using the generic callback function which returns an object 
+// of the total number of people, total age, and the average age 
+// of people from BC and Alberta only.
+
 
 //2019-11-08 Daily Exercise Callback Exercise Part 1
     sortWest: (peopleArr, myFunction) => {
@@ -14,6 +19,7 @@ const functions = {
             };
         };
         console.log(westArr);
+        
         let myList = myFunction(westArr);
         return myList;
     },
@@ -118,9 +124,7 @@ const functions = {
 //2019-10-9 Daily Exercise
 
     makeEmailObj: (emailObjInput) => {
-        console.log(emailObjInput);
         // let myObj = (emailObjInput);
-        // console.log(myObj, 'myobj');
         let emailAddress = `${emailObjInput.fname}.${emailObjInput.lname}@evolveu.ca`;
         return emailAddress.toLowerCase();
     },
