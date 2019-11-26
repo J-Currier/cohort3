@@ -1,8 +1,11 @@
 const functions = { 
     //functions object
 
+// callback part 2 
+
 //2019-11-08 Daily Exercise Callback Exercise Part 1
-    sortWest: (peopleArr) => {
+    sortWest: (peopleArr, myFunction) => {
+        console.log('hiJen')
         let count = 0;
         let westArr = [];
         for (let i = 0; i < peopleArr.length; i++) {
@@ -10,8 +13,9 @@ const functions = {
                 westArr.push(peopleArr[i]);
             };
         };
-        let nameList = functions.makeList(westArr)
-        return nameList;
+        console.log(westArr);
+        let myList = myFunction(westArr);
+        return myList;
     },
 
     makeList: (westArr) => {
@@ -21,7 +25,6 @@ const functions = {
         })
         // let toAdd = westArr.fname + ' ' + westArr.lname;
         // westArr.push(toAdd);
-        console.log("this is name list",nameList);
         return nameList;
         
     },
@@ -52,6 +55,7 @@ const functions = {
             myArr.push(functions.emailCallBackFunction(element));
             return myArr;
         });
+        return myArr;
         
     },
 
@@ -61,7 +65,6 @@ const functions = {
     },
 
     emailCallBackFunction: (staffObject) => {
-        console.log(staffObject.fname);
         let emailAddress = `${staffObject.fname}.${staffObject.lname}@evolveu.ca`;
         return (emailAddress.toLowerCase());
     },
@@ -78,11 +81,8 @@ const functions = {
 
     loopStaffIn: (dataobject) => {
         let myArr = [];
-        // console.log(dataobject);
         for (let x in dataobject) {
             let staffObject = dataobject[x];
-            console.log(staffObject);
-            console.log(staffObject.fname)
             let emailAddress = `${staffObject.fname}.${staffObject.lname}@evolveu.ca`;
             
             myArr.push(emailAddress.toLowerCase());
@@ -118,6 +118,9 @@ const functions = {
 //2019-10-9 Daily Exercise
 
     makeEmailObj: (emailObjInput) => {
+        console.log(emailObjInput);
+        // let myObj = (emailObjInput);
+        // console.log(myObj, 'myobj');
         let emailAddress = `${emailObjInput.fname}.${emailObjInput.lname}@evolveu.ca`;
         return emailAddress.toLowerCase();
     },
@@ -182,7 +185,6 @@ const functions = {
 // slice
     sliceEx: (input) => {
         let newArray = input.slice(2,5);
-        console.log(newArray);
         return newArray;
     },
 // splice
@@ -204,7 +206,6 @@ const functions = {
             
         };
         fruits.forEach(fruitFunction);
-        console.log(fruits);
         return value;
     },
     

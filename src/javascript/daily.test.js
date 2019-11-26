@@ -1,6 +1,7 @@
 import functions from './daily.js'
 import { tsExternalModuleReference, exportAllDeclaration } from '@babel/types'
 
+// callback part 2 
 
 //2019-11-08 Daily Exercise Callback Exercise Part 1
 
@@ -52,7 +53,7 @@ const people = [
 ];
 
 test('Western Provinces', () => {
-    const westNameArr = functions.sortWest(people);
+    const westNameArr = functions.sortWest(people, functions.makeList());
     expect(westNameArr.length)
         .toEqual(22);
     expect(westNameArr[0]).toEqual("Alex Smith");
@@ -159,12 +160,15 @@ test('practice test', () => {
 
 //2019-10-9 Daily Exercise
 test('email builder from an array', () => {
-    const name = ["first", "last"];
+    const name = {fname: "firstbe", lname: "last"};
+    console.log(name.fname);
     expect(functions.makeEmailObj(name))
+        .toEqual("firstbe.last@evolveu.ca");
+    const newname = {fname: "First", lname: "Last"};
+    expect(functions.makeEmailObj(newname))
         .toEqual("first.last@evolveu.ca");
-    expect(functions.makeEmailObj(["First", "Last"]))
-        .toEqual("first.last@evolveu.ca");
-    expect(functions.makeEmailObj(["Bill", "Smith"]))
+    const newname1 = {fname: "Bill", lname: "Smith"};
+    expect(functions.makeEmailObj(newname1))
         .toEqual("bill.smith@evolveu.ca");
 });
 
