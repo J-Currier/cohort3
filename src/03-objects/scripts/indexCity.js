@@ -1,5 +1,5 @@
 import { City, Community } from "./city.js";
-// import functions from './cityDOM.js';
+import functions from './cityDOM.js';
 // import { conditionalExpression } from "@babel/types";
 
 const newComm = new Community('myCommunity');
@@ -42,7 +42,7 @@ addCityButton.addEventListener('click', function() {
     let newCityPopulation = parseFloat(document.getElementById('newCityPopulation').value);
     document.getElementById('newCityName').value = '';
     document.getElementById('newCityPopulation').value = '';
-    let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newComm.counter);
+    // let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newComm.counter);
     newComm.createNewCity(newCityName, newCityPopulation);
     console.log(newComm.cityList.length);
     let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, this.key);
