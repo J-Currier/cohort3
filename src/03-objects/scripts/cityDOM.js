@@ -9,7 +9,8 @@ const functions = {
         const newCityCard = document.createElement('div');
         newCityCard.setAttribute('class', 'cards');
         newCityCard.setAttribute('id', newCityName);
-        newCityCard.setAttribute('key', counter);
+        let correctCounter = counter - 1;
+        newCityCard.setAttribute('key', correctCounter);
         console.log(newCityCard);
 
         let titleDiv = document.createElement('div');
@@ -31,7 +32,7 @@ const functions = {
         let newLatLonID = newCityName + 'latLong';
         latlongDiv.setAttribute('id', latitude);
         latlongDiv.innerHTML = `${latitude}, ${longitude}`;
-        newCityCard.appendChild(populationDiv);
+        newCityCard.appendChild(latlongDiv);
 
 
         let inputField = document.createElement('input');

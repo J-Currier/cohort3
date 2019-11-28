@@ -7,19 +7,20 @@ console.log(newComm);
 
 
 myCityCardsId.addEventListener('click', function(){
+    console.log(event.target.parentNode.getAttribute('key'), 'pevent');
     let cityKey = parseInt(event.target.parentNode.getAttribute('key'));
+    console.log('citykey', cityKey);
 
     if (event.target.value == 'increasePop') {
-        let amount = parseFloat(event.target.parentNode.children[2].value);
+        let amount = parseFloat(event.target.parentNode.children[3].value);
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         newComm.cityList[index].movedIn(amount);
-        console.log('new population', newComm.cityList[index].population);
         let newPopulation = newComm.cityList[index].population
         event.target.parentNode.children[1].innerHTML = `Your population is ${newPopulation}`;
     };
     if (event.target.value == 'decreasePop') {
-        let amount = parseFloat(event.target.parentNode.children[2].value);
+        let amount = parseFloat(event.target.parentNode.children[3].value);
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         newComm.cityList[index].movedOut(amount);
@@ -27,25 +28,36 @@ myCityCardsId.addEventListener('click', function(){
         let newPopulation = newComm.cityList[index].population
         event.target.parentNode.children[1].innerHTML = `Your population is ${newPopulation}`;
     };
-    if (event.target.value == 'deleteCity') {
+    if (event.target.value == 'delete') {
+        console.log('delete func');
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         let cityName = newComm.cityList[index].cityName;
         newComm.removeCity(cityName);
         let divToDelete = event.target.parentNode;
         divToDelete.remove();
+        console.log(newComm.cityList);
     };
 });
 // add lat and long get and put in function
 addCityButton.addEventListener('click', function() {
     let newCityName= document.getElementById('newCityName').value;
     let newCityPopulation = parseFloat(document.getElementById('newCityPopulation').value);
+    let newCityLatitude = parseFloat(document.getElementById('newCityLatitude').value);
+    let newCityLongitude = parseFloat(document.getElementById('newCityLongitude').value);
+
+
     document.getElementById('newCityName').value = '';
     document.getElementById('newCityPopulation').value = '';
+    document.getElementById('newCityLatitude').value = '';
+    document.getElementById('newCityLongitude').value = '';
+
     // let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newComm.counter);
-    newComm.createNewCity(newCityName, newCityPopulation);
-    console.log(newComm.cityList.length);
-    let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, this.key);
+    newComm.createNewCity(newCityName,  newCityLatitude, newCityLongitude, newCityPopulation);
+    console.log(newComm.cityList, 'list');
+    let newKey = newComm.counter;
+    console.log('newkey', newKey);
+    let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newCityLatitude, newCityLongitude, newKey);
     myCityCardsId.insertBefore(newCityCard, myCityCardsId.childNodes[0]);
     console.table(newComm.cityList);
 });
