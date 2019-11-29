@@ -1,6 +1,5 @@
 import { City, Community } from "./city.js";
 import functions from './cityDOM.js';
-// import { conditionalExpression } from "@babel/types";
 
 const newComm = new Community('myCommunity');
 console.log(newComm);
@@ -9,7 +8,6 @@ console.log(newComm);
 myCityCardsId.addEventListener('click', function(){
     console.log(event.target.parentNode.getAttribute('key'), 'pevent');
     let cityKey = parseInt(event.target.parentNode.getAttribute('key'));
-    console.log('citykey', cityKey);
 
     if (event.target.value == 'increasePop') {
         let amount = parseFloat(event.target.parentNode.children[3].value);
@@ -24,12 +22,10 @@ myCityCardsId.addEventListener('click', function(){
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         newComm.cityList[index].movedOut(amount);
-        console.log('new population', newComm.cityList[index].population);
         let newPopulation = newComm.cityList[index].population
         event.target.parentNode.children[1].innerHTML = `Your population is ${newPopulation}`;
     };
     if (event.target.value == 'delete') {
-        console.log('delete func');
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         let cityName = newComm.cityList[index].cityName;
@@ -54,12 +50,9 @@ addCityButton.addEventListener('click', function() {
 
     // let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newComm.counter);
     newComm.createNewCity(newCityName,  newCityLatitude, newCityLongitude, newCityPopulation);
-    console.log(newComm.cityList, 'list');
     let newKey = newComm.counter;
-    console.log('newkey', newKey);
     let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newCityLatitude, newCityLongitude, newKey);
     myCityCardsId.insertBefore(newCityCard, myCityCardsId.childNodes[0]);
-    console.table(newComm.cityList);
 });
 
 mostNortherly.addEventListener('click', function() {
@@ -73,7 +66,6 @@ mostSouthernly.addEventListener('click', function() {
 });
 
 totalPop.addEventListener('click', function() {
-    console.log('sum');
     let totalPop = newComm.getPopulation();
     textdisplay.innerHTML = `The total population of your community is <b>${totalPop}</b>`;
 });
