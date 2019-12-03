@@ -5,14 +5,14 @@ import { serverFunctions } from "./cityServerFunctions.js";
 
 const newComm = new Community('myCommunity');
 serverFunctions.loadData(newComm);
-console.log(newComm);
-newComm.citiesList.map((cit)=> {
+
+console.log(newComm.cityList, 'citlis');
+if (newComm.cityList.length > 0) {
+    newComm.citiesList.map((cit)=> {
     let newCityCard = functions.createNewCardFunction(cit.mame, cit.population, cit.latitude, cit.longitude, cit.key);
     myCityCardsId.insertBefore(newCityCard, myCityCardsId.childNodes[0]);
-
-} )
-myData.map((cit) => createNewCity(cit.name, cit.latitude, cit.longitude, cit.population));
-
+    } );
+};
 
 myCityCardsId.addEventListener('click', function(){
     console.log(event.target.parentNode.getAttribute('key'), 'pevent');
@@ -24,6 +24,7 @@ myCityCardsId.addEventListener('click', function(){
         let index = cityArr.indexOf(cityKey);
         newComm.cityList[index].movedIn(amount);
         let newPopulation = newComm.cityList[index].population
+        serverFunctions.updateCity(newComm.cityList[index]);
         event.target.parentNode.children[1].innerHTML = `Your population is ${newPopulation}`;
     };
     if (event.target.value == 'decreasePop') {
@@ -31,6 +32,7 @@ myCityCardsId.addEventListener('click', function(){
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         newComm.cityList[index].movedOut(amount);
+        serverFunctions.updateCity(newComm.cityList[index]);
         let newPopulation = newComm.cityList[index].population
         event.target.parentNode.children[1].innerHTML = `Your population is ${newPopulation}`;
     };
@@ -38,6 +40,7 @@ myCityCardsId.addEventListener('click', function(){
         let cityArr = newComm.cityList.map(function(param){return param.key;});  
         let index = cityArr.indexOf(cityKey);
         let cityName = newComm.cityList[index].cityName;
+        serverFunctions.deleteCity(newComm.cityList[index].key);
         newComm.removeCity(cityName);
         let divToDelete = event.target.parentNode;
         divToDelete.remove();
@@ -57,9 +60,22 @@ addCityButton.addEventListener('click', function() {
     document.getElementById('newCityLatitude').value = '';
     document.getElementById('newCityLongitude').value = '';
 
+
+    let lookUpKey = newComm.counter;
     // let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newComm.counter);
     newComm.createNewCity(newCityName,  newCityLatitude, newCityLongitude, newCityPopulation);
+
     let newKey = newComm.counter;
+
+    // let lookUpKey = newKey - 1;
+
+    let cityArr = newComm.cityList.map(function(param){return param.key;});  
+    let index = cityArr.indexOf(lookUpKey);
+    let cityForServ = newComm.cityList[index];
+    console.log(cityForServ, 'cityserv tonew add')
+    serverFunctions.addCity(cityForServ);
+
+    
     let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newCityLatitude, newCityLongitude, newKey);
     myCityCardsId.insertBefore(newCityCard, myCityCardsId.childNodes[0]);
 });

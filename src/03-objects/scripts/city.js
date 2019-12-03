@@ -52,6 +52,7 @@ class Community {
     }
 
     createNewCity(name, latitude, longitude, population) {
+        console.log('createnewcity');
 
         this.cityList.push(new City(name, latitude, longitude, population, this.counter));
         this.counter ++;
