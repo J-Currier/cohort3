@@ -1,9 +1,9 @@
-import { City, Community } from "./city.js";
+// import { City, Community } from "./city.js";
 
 const url = 'http://localhost:5000/';
 
 const serverFunctions = {
-    async postData(url, data = {}) => {
+    async postData(url, data = {}) {
         // Default options are marked with *
         const response = await fetch(url, {
             method: 'POST',     // *GET, POST, PUT, DELETE, etc.
@@ -20,14 +20,27 @@ const serverFunctions = {
         });
         return await response.json();   // parses JSON response into native JavaScript objects
     },
-    async loadData(url)
-
-
+    async loadData(myCommunity) {
+            try {
+                let myData = postData(url + all);
+                myCommunity.cityList = myData.map((cit) => createNewCity(cit.name, cit.latitude, cit.longitude, cit.population));
+                return false;
+            } catch (error) {
+                return "Citties not loaded";
+            };
+    },
     
-
-    
-
-
-
-
 }
+
+export { serverFunctions }
+
+
+
+
+    
+
+    
+
+
+
+

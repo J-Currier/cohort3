@@ -1,8 +1,17 @@
 import { City, Community } from "./city.js";
 import functions from './cityDOM.js';
+import { serverFunctions } from "./cityServerFunctions.js";
+
 
 const newComm = new Community('myCommunity');
+serverFunctions.loadData(newComm);
 console.log(newComm);
+newComm.citiesList.map((cit)=> {
+    let newCityCard = functions.createNewCardFunction(cit.mame, cit.population, cit.latitude, cit.longitude, cit.key);
+    myCityCardsId.insertBefore(newCityCard, myCityCardsId.childNodes[0]);
+
+} )
+myData.map((cit) => createNewCity(cit.name, cit.latitude, cit.longitude, cit.population));
 
 
 myCityCardsId.addEventListener('click', function(){
@@ -54,6 +63,8 @@ addCityButton.addEventListener('click', function() {
     let newCityCard = functions.createNewCardFunction( newCityName, newCityPopulation, newCityLatitude, newCityLongitude, newKey);
     myCityCardsId.insertBefore(newCityCard, myCityCardsId.childNodes[0]);
 });
+
+
 
 mostNortherly.addEventListener('click', function() {
     let mostNortherlyCity = newComm.mostNorthern();
