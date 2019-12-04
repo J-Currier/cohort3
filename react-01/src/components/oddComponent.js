@@ -1,16 +1,15 @@
-
 import React from 'react';
 
-class MyComp extends React.Component {
+class OddComponent extends React.Component {
 
 	render() {
 			return (
 				<div>
-					<h1>Hello World from MyComp {this.props.whatToSay}</h1>
+					<h1>Hello World from Odd Component </h1>
 					<button onClick={this.props.toPass}> pushMe!!</button>
 				</div>
 			)
 		}
 }
 
-export default MyComp;
+export default oddComponent;

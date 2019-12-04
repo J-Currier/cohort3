@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MyComp from './components/myComponent.js';
+import EvenComponent from './components/evenComponent.js';
+import OddComponent from './components/oddComponent.js';
+
 
 
 class App extends React.Component {
@@ -21,6 +24,12 @@ class App extends React.Component {
       myState: "now: " + this.counter
     });
   };
+
+  evenOdd = () => {
+    if (this.counter % 2 ==0) {
+
+    }
+  }
   render () {
     return (
       <div className="App">
@@ -29,7 +38,8 @@ class App extends React.Component {
           <h1>I am in control of this application and my name is Jen!    {this.counter} {this.state.myState}</h1>
           <button onClick={this.onPushMe}>Push ME!!</button>
           
-          <MyComp whatToSay='what Ever' />
+          <MyComp whatToSay='What Ever' toPass={this.onPushMe} />
+          
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
