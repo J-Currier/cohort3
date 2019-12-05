@@ -25,11 +25,7 @@ class App extends React.Component {
     });
   };
 
-  evenOdd = () => {
-    if (this.counter % 2 ==0) {
-
-    }
-  }
+  
   render () {
     return (
       <div className="App">
@@ -39,6 +35,8 @@ class App extends React.Component {
           <button onClick={this.onPushMe}>Push ME!!</button>
           
           <MyComp whatToSay='What Ever' toPass={this.onPushMe} />
+          <OddComponent counter={this.counter}/>
+          <EvenComponent counter={this.counter}/>
           
           <p>
             Edit <code>src/App.js</code> and save to reload.
