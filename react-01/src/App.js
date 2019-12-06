@@ -23,6 +23,8 @@ class App extends React.Component {
     this.setState({
       myState: "now: " + this.counter
     });
+    console.log(this.state.myState)
+
   };
 
   

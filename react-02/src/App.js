@@ -10,16 +10,31 @@ import BonfireIcon from './components/bonfire.js';
 
 class App extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      selected: "hi there",
+      checking2: "im in app",
+    }
+  }
+
   switchMyState = () => {
-    console.log('hi');
 
   }
+
+  onSelect = (event) => {
+    this.setState({
+        selected: event.target.id
+      });
+      console.log(this.state.selected)
+      console.log(this)
+    };
 
   render () {
     return (
       <div className="App">
         <div className='myHeader'>
-          <button className="myButton" onClick={this.switchMyState} ><BonfireIcon /></button>
+          <button className="myButton" onClick={this.onSelect} ><BonfireIcon /></button>
           <img src={compass} className="header-logo" alt="logo" />
           <img src={fox} className="header-logo" alt="logo" />
           <img src={pawprint} className="header-logo" alt="logo" />

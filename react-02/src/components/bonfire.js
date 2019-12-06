@@ -4,8 +4,10 @@ import bonfire from './bonfire.svg';
 class BonfireIcon extends React.Component { 
     constructor(props) {
       super(props);
+      this.id= 'BonfireIcon'
       this.state = {
         isCardView: true,
+        checking: "i am checkng",
       }
     } 
 
@@ -13,8 +15,9 @@ class BonfireIcon extends React.Component {
         if (this.state.isCardView ){
 			return (
 				<div>
-					<img src={bonfire} className="header-logo" alt="logo"  />
-					
+					<img src={bonfire} className="header-logo" alt="logo" id='BonfireState' />
+          show {this.state.checking}
+          {this.state.checking2}
 				</div>
 			)
 		} else {
