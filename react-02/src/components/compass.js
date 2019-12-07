@@ -6,13 +6,12 @@ import fox from './fox.svg';
 import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
 import 'C:/Code/cohort3/react-02/src/App.css';
-// import './App.css';
 
 
-class BonfireIcon extends React.Component { 
+class CompassIcon extends React.Component { 
     constructor(props) {
       super(props);
-      this.id= 'bonfire Button'
+      this.id= 'compass Button'
       this.state = {
         isCardView: true,
       }
@@ -22,15 +21,15 @@ class BonfireIcon extends React.Component {
 			return (
         <div className="App">
           <div className='myHeader'>
-            <input type="image" src={bonfire}  className="header-logo-invert" id="bonfire" onClick={this.props.eventFunc} alt='homeButton'/>
-            <input type="image" src={compass}  className="header-logo" id="compass" onClick={this.props.eventFunc} alt='homeButton'/>
+            <input type="image" src={bonfire}  className="header-logo" id="bonfire" onClick={this.props.eventFunc} alt='homeButton'/>
+            <input type="image" src={compass}  className="header-logo-invert" id="compass" onClick={this.props.eventFunc} alt='navButton'/>
             <input type="image" src={fox}  className="header-logo" id="fox" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={pawprint}  className="header-logo" id="pawprint" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={turtle}  className="header-logo" id="turtle" onClick={this.props.eventFunc} alt='homeButton'/>
           </div>
 
           <div className="App-header">
-            <h1>Welcome to my home page </h1>
+            <h1>Welcome to the Nav page </h1>
             <img src={logo} className="App-logo" alt="logo" />
             <p>
               Edit <code>src/App.js</code> and save to reload.
@@ -49,4 +48,4 @@ class BonfireIcon extends React.Component {
     };
 };
 
-export default BonfireIcon;
+export default CompassIcon;

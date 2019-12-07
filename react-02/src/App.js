@@ -1,6 +1,10 @@
 import React from 'react';
 // import BonfireIcon from './components/bonfire.js';
 import BonfireIcon from './components/bonfire';
+import CompassIcon from './components/compass';
+import FoxIcon from './components/fox';
+import PawprintIcon from './components/pawprint';
+import TurtleIcon from './components/turtle';
 
 
 
@@ -18,6 +22,8 @@ class App extends React.Component {
   }
 
   onSelect = (event) => {
+    console.log('hellooo');
+    console.log(event.target.id);
     this.setState({
         selected: event.target.id
       });
@@ -25,15 +31,15 @@ class App extends React.Component {
   
     pageRendered = () => {
       if (this.state.selected === 'bonfire') {
-        return < BonfireIcon />;
-      // } if (this.state.selected === ticTacToe) {
-      //   return < TicTacToeGame />;
-      // } if (this.state.selected === coins) {
-      //   return < Accounts />;
-      // } if (this.state.selected === city) {
-      //   return < Homepage />;
-      // } if (this.state.selected === gears1 || this.state.selected === gears2) {
-      //   return < Homepage />;
+      return < BonfireIcon eventFunc={this.onSelect}/>;
+      } if (this.state.selected === 'compass') {
+        return < CompassIcon eventFunc={this.onSelect} />;
+      } if (this.state.selected === 'fox') {
+        return < FoxIcon eventFunc={this.onSelect} />;
+      } if (this.state.selected === 'pawprint') {
+        return < PawprintIcon eventFunc={this.onSelect} />;
+      } if (this.state.selected === 'turtle' ) {
+        return < TurtleIcon eventFunc={this.onSelect} />;
       }
     }
 
