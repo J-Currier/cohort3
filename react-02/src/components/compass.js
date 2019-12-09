@@ -7,17 +7,15 @@ import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
 import 'C:/Code/cohort3/react-02/src/App.css';
 
-class Square extends React.Component {
+function Square(props) {
 
-  render() {
     return (
       <button className="square" 
-        onClick={() => this.props.onClick()}
+        onClick={props.onClick}
       >
-        {this.props.value}
+        {props.value}
       </button>
     );
-  }
 }
 
 class Board extends React.Component {
@@ -25,13 +23,19 @@ class Board extends React.Component {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
+      xIsNext: true,
     };
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState({squares:squares});
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares:squares,
+      xIsNext: !this.state.xIsNext
+    });
+    
+
   }
   renderSquare(i) {
     return <Square 

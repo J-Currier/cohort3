@@ -144,7 +144,7 @@ ol, ul {
   background: radial-gradient(circle, rgba(121,113,243,1) 0%, rgba(148,187,233,1) 100%);  font-weight: bold;
   border: 3px solid black;
   float: left;
-  font-size: 24px;
+  font-size: 100px;
   font-weight: bold;
   line-height: 135px;
   height: 150px;
