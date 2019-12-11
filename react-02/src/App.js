@@ -16,13 +16,7 @@ class App extends React.Component {
     }
   }
 
-  switchMyState = () => {
-    console.log('hiii');
-  }
-
   onSelect = (event) => {
-    console.log('hellooo');
-    console.log(event.target.id);
     this.setState({
         selected: event.target.id
       });

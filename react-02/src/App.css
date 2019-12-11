@@ -247,7 +247,7 @@ ol, ul {
 }
 
 .myAccountCards {
-    background-color: rgba(50, 176, 235, 0.89);
+    background-color:#05a2f0;
     /* min-height: 400px; */
     height: auto;
     display: grid;
