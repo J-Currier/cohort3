@@ -1,5 +1,4 @@
 import React from 'react';
-// import BonfireIcon from './components/bonfire.js';
 import BonfireIcon from './components/bonfire';
 import CompassIcon from './components/compass';
 import FoxIcon from './components/fox';

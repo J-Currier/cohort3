@@ -1,5 +1,8 @@
+
+
 .App {
   text-align: center;
+  margin: -20px;
 }
 
 .App-logo {
@@ -32,7 +35,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  padding-top: 40px;
 }
 
 .turtle-App-header {
@@ -187,4 +191,104 @@ ol, ul {
 }
 .moveButton:hover {
 	background-color:#00aeff;
+}
+
+
+/* vvvvvvvvvvv---  accounts css   ---vvvvvvvvvvvv */
+
+.myHeading {
+    font-size: 3.5em;
+    background-color: #BFE1FF;
+    padding: 30px;
+    border-bottom: #784132;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+.addAccountSection {
+    background-color: #87C7FF;
+    padding: 20px;
+    font-size: 1.5em;
+    line-height: 1.7;
+}
+
+.addNewAccountCard {
+    margin: 0 auto;
+    background-color: #BFE1FF;
+    border: #784132;
+    border-radius:19px;
+    width: 75%;
+    min-width: 400px;
+    padding: 20px;
+}
+
+.buttonDiv {
+    padding: 35px;
+}
+.buttons {
+    margin: 5px;
+	background-color:#FE8205;
+	border-radius:19px;
+	border:2px solid #FA5D0F;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-size:20px;
+	padding:13px 28px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ff8800;
+}
+.buttons:hover {
+	background-color:#FA5D0F;
+}
+.buttons:active {
+	position:relative;
+	top:1px;
+}
+
+.myAccountCards {
+    background-color: rgba(50, 176, 235, 0.89);
+    /* min-height: 400px; */
+    height: auto;
+    display: grid;
+    /* grid-area: 3 / 4 / 6 / 5; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    
+
+
+}
+
+.cards {
+    background-color: rgba(185, 227, 247, 0.89);
+    border: white solid;
+    border-radius:19px;
+    padding: 10px;
+    height: auto;
+
+}
+
+
+.accountCardHeader {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.accountCardBalance {
+    padding: 15px;
+}
+.amountInput {
+    margin: 10px;
+    padding: 5px;
+     font-size: 16px;
+     border-width: 1px;
+     border-color: #ffffff;
+     background-color: #ffffff;
+     color: #000000;
+     border-style: double;
+     border-radius: 2px;
+     box-shadow: 0px 0px 5px rgba(8,160,232,.75);
+     text-shadow: 0px 0px 0px rgba(66,66,66,.95);
 }

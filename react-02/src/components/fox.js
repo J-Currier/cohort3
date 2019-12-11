@@ -1,6 +1,5 @@
 import React from 'react';
 import bonfire from './bonfire.svg';
-import logo from './logo.svg';
 import compass from './compass.svg';
 import fox from './fox.svg';
 import pawprint from './paw-print.svg';
@@ -12,9 +11,6 @@ class FoxIcon extends React.Component {
     constructor(props) {
       super(props);
       this.id= 'fox Button'
-      this.state = {
-        isCardView: true,
-      }
     } 
 
     render() {
@@ -29,19 +25,33 @@ class FoxIcon extends React.Component {
           </div>
 
           <div className="App-header">
-            <h1>Welcome to the 🦊 page </h1>
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
+            <div className='accountsDiv'>
+              <div className='myHeading'>Bank o' Jen
+              </div>
+            <div className='addAccountSection'>
+              <div className='addNewAccountCard'>
+                To add a new account:<br />
+                Give your new account a name pput an input here 
+                {/* <input id='newAccountName' type='text' placeholder="New account name"> */}
+                  <br />
+                Enter the starting balance    put an input here
+                {/* <input id='newAccountBalance' type='text' placeholder='New account balance'> */}
+                  <br />
+                <div className='buttonDiv'>
+                  <button className='buttons' id='addAccountButton'>Make a New Account!</button>
+                </div>
+                <div id='displayArea'>
+                  <div id='textdisplay'>
+                  </div>
+                  <button className='buttons' id='highestAccount'>Highest Balance</button>
+                  <button className='buttons' id='lowestAccount'>Lowest Balance</button>
+                  <button className='buttons' id='sumAccount'>Account Total</button>
+                </div>
+              </div>
+            </div>
+            <div className='myAccountCards' id='myAccountCardsId'>
+            </div>
+            </div>
           </div>
         </div>
       )
