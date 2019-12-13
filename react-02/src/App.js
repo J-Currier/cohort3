@@ -15,7 +15,10 @@ class App extends React.Component {
       selected: 'bonfire',
     }
   }
-
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   onSelect = (event) => {
     this.setState({
         selected: event.target.id

@@ -31,6 +31,12 @@ class BonfireIcon extends React.Component {
             <input type="image" src={fox}  className="header-logo" id="fox" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={pawprint}  className="header-logo" id="pawprint" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={turtle}  className="header-logo" id="turtle" onClick={this.props.eventFunc} alt='homeButton'/>
+            <div>Home</div>
+            <div>Tic Tac Toe</div>
+            <div>Accounts</div>
+            <div>Cities</div>
+            <div>Turtles!</div>
+
           </div>
 
           <div className="App-header">

@@ -72,12 +72,8 @@ class MyAccountComp extends React.Component {
 }
 
 function NewAccountButton(props) { 
-    console.log('ive been pressed')
         return(
-            
                 <button className='buttons' id='addAccountButton' onClick={props.onClick}>Make a New Account!</button>
-                
-            
         );
 
 

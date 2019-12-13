@@ -26,6 +26,11 @@ class TurtleIcon extends React.Component {
             <input type="image" src={fox}  className="header-logo" id="fox" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={pawprint}  className="header-logo" id="pawprint" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={turtle}  className="header-logo-invert" id="turtle" onClick={this.props.eventFunc} alt='homeButton'/>
+            <div>Home</div>
+            <div>Tic Tac Toe</div>
+            <div>Accounts</div>
+            <div>Cities</div>
+            <div>Turtles!</div>
           </div>
 
           <div className="turtle-App-header">
