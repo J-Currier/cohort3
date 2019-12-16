@@ -11,7 +11,13 @@ class MyAccountComp extends React.Component {
         id: 'myAccountComp',
         accountList: [],
         counter: 0,
+        accountName: '',
+        accountBalance: '',
       };
+      this.handleNameChange = this.handleNameChange.bind(this);
+      this.handleBalanceChange = this.handleBalanceChange.bind(this);
+
+
       
     } 
 
@@ -19,8 +25,8 @@ class MyAccountComp extends React.Component {
         // creat a for loop to check for same named account
 
         let myNewAccount = {
-            name: accountName,
-            balance: startingBalance,
+            name: this.state.accountName,
+            balance: parseFloat(this.state.accountBalance).toFixed(2),
             key: this.state.counter
         }
 
@@ -30,7 +36,26 @@ class MyAccountComp extends React.Component {
         });
         console.log(myNewAccount)
         console.log (this.state);
+        this.setState({
+            accountName: '',
+            accountBalance: '',
+        });
 
+        this.displayAccounts();
+    }
+
+    handleNameChange(event) {
+        this.setState({accountName: event.target.value});
+        console.log(this.state.accountName)
+    }
+
+    handleBalanceChange(event) {
+        this.setState({accountBalance: event.target.value});
+        console.log(this.state.accountBalance)
+    }
+
+    displayAccounts() {
+        console.log('display accounts');
     }
 
     render() {
@@ -42,11 +67,11 @@ class MyAccountComp extends React.Component {
                     <div className='addAccountSection'>
                         <div className='addNewAccountCard'>
                                 To add a new account:<br />
-                                Give your new account a name pput an input here 
-                                {/* <input id='newAccountName' type='text' placeholder="New account name"> */}
+                                Give your new account a name 
+                                <input type="text" value={this.state.accountName} onChange={this.handleNameChange} />
                                 <br />
-                                Enter the starting balance    put an input here
-                                {/* <input id='newAccountBalance' type='text' placeholder='New account balance'> */}
+                                Enter the starting balance   <br /> 
+                                $<input type="text" value={this.state.accountBalance} onChange={this.handleBalanceChange} />
                                 <br />
                             <div className='buttonDiv'>
                             
@@ -79,6 +104,7 @@ function NewAccountButton(props) {
 
 
 }
+
 
 
 export default MyAccountComp
