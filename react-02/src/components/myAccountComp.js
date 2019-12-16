@@ -98,7 +98,7 @@ function NewAccountButton(props) {
 
 function DisplayAccounts(props) {
 const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toString()}> {CreateNewCardFunction(account)}</li>);
-    return <ul>{cardList}</ul>;
+    return <ul className="unstyled">{cardList}</ul>;
 }
 
 function CreateNewCardFunction(account) {
@@ -106,9 +106,16 @@ function CreateNewCardFunction(account) {
     let currencyBalance = parseFloat(account.balance);
     
     return (
-
+        
         <div className="cards" id={account.name} key={account.uniqueID} >
             <div className='accountCardHeader' >{account.name}</div>
+            <div className='accountCardBalance'>Your balance is ${account.balance}</div>
+            <div className="amountInput" > input feild here</div>
+            <button className='buttons' value='deposit'>Deposit</button>
+            <button className='buttons' value='withdraw'>Withdraw</button>
+            <button className='buttons' value='delete'>DELETE ACCOUNT</button>
+
+
         </div>
     )
 
@@ -120,19 +127,19 @@ function CreateNewCardFunction(account) {
 // //     newAccountCard.setAttribute('key', counter);
 // //     console.log(newAccountCard);
 
-//     let titleDiv = document.createElement('div');
-//     titleDiv.setAttribute('class', 'accountCardHeader')
-//     let newId = newAccountName + 'Title';
-//     titleDiv.setAttribute('id', newId);
-//     titleDiv.innerHTML = newAccountName;
-//     newAccountCard.appendChild(titleDiv);
+// //     let titleDiv = document.createElement('div');
+// //     titleDiv.setAttribute('class', 'accountCardHeader')
+// //     let newId = newAccountName + 'Title';
+// //     titleDiv.setAttribute('id', newId);
+// //     titleDiv.innerHTML = newAccountName;
+// //     newAccountCard.appendChild(titleDiv);
 
-//     let balanceDiv = document.createElement('div');
-//     balanceDiv.setAttribute('class', 'accountCardBalance')
-//     let newBalId = newAccountName + 'Balance';
-//     balanceDiv.setAttribute('id', newBalId);
-//     balanceDiv.innerHTML = `Your balance is $${currencyBalance}`;
-//     newAccountCard.appendChild(balanceDiv);
+// //     let balanceDiv = document.createElement('div');
+// //     balanceDiv.setAttribute('class', 'accountCardBalance')
+// //     let newBalId = newAccountName + 'Balance';
+// //     balanceDiv.setAttribute('id', newBalId);
+// //     balanceDiv.innerHTML = `Your balance is $${currencyBalance}`;
+// //     newAccountCard.appendChild(balanceDiv);
 
 //     let inputField = document.createElement('input');
 //     inputField.setAttribute('class', 'amountInput');
@@ -143,29 +150,29 @@ function CreateNewCardFunction(account) {
 //     inputField.setAttribute('placeholder', 'enter amount');
 //     newAccountCard.appendChild(inputField);
 
-//     let brTag = document.createElement('br');
-//     newAccountCard.appendChild(brTag);
+// //     let brTag = document.createElement('br');
+// //     newAccountCard.appendChild(brTag);
 
-//     let depositbutton = document.createElement('button');
-//     depositbutton.setAttribute('class', 'buttons');
-//     depositbutton.innerHTML = 'Deposit';
-//     depositbutton.value = 'deposit';
-//     newAccountCard.appendChild(depositbutton);
+// //     let depositbutton = document.createElement('button');
+// //     depositbutton.setAttribute('class', 'buttons');
+// //     depositbutton.innerHTML = 'Deposit';
+// //     depositbutton.value = 'deposit';
+// //     newAccountCard.appendChild(depositbutton);
 
 
-//     let withdrawbutton = document.createElement('button');
-//     withdrawbutton.setAttribute('class', 'buttons');
-//     withdrawbutton.innerHTML = 'Withdraw';
-//     withdrawbutton.value = 'withdraw';
-//     newAccountCard.appendChild(withdrawbutton);
+// //     let withdrawbutton = document.createElement('button');
+// //     withdrawbutton.setAttribute('class', 'buttons');
+// //     withdrawbutton.innerHTML = 'Withdraw';
+// //     withdrawbutton.value = 'withdraw';
+// //     newAccountCard.appendChild(withdrawbutton);
 
-//     let deletebutton = document.createElement('button');
-//     deletebutton.setAttribute('class', 'buttons');
-//     deletebutton.innerHTML = 'DELETE';
-//     deletebutton.value = 'delete';
-//     newAccountCard.appendChild(deletebutton);
+// //     let deletebutton = document.createElement('button');
+// //     deletebutton.setAttribute('class', 'buttons');
+// //     deletebutton.innerHTML = 'DELETE';
+// //     deletebutton.value = 'delete';
+// //     newAccountCard.appendChild(deletebutton);
 
-//     return newAccountCard;
+// //     return newAccountCard;
 // },
 
     }
