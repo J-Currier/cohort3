@@ -21,13 +21,13 @@ class MyAccountComp extends React.Component {
       
     } 
 
-    createNewAccount(accountName, startingBalance) {
+    createNewAccount() {
         // creat a for loop to check for same named account
 
         let myNewAccount = {
             name: this.state.accountName,
             balance: parseFloat(this.state.accountBalance).toFixed(2),
-            key: this.state.counter
+            uniqueID: this.state.counter
         }
 
         this.setState({
@@ -41,7 +41,7 @@ class MyAccountComp extends React.Component {
             accountBalance: '',
         });
 
-        this.displayAccounts();
+        // DisplayAccounts(this.state.accountList);
     }
 
     handleNameChange(event) {
@@ -54,9 +54,7 @@ class MyAccountComp extends React.Component {
         console.log(this.state.accountBalance)
     }
 
-    displayAccounts() {
-        console.log('display accounts');
-    }
+
 
     render() {
         return (
@@ -75,7 +73,7 @@ class MyAccountComp extends React.Component {
                                 <br />
                             <div className='buttonDiv'>
                             
-                            <NewAccountButton onClick={() => this.createNewAccount('myname', 100)} />    
+                            <NewAccountButton onClick={() => this.createNewAccount()} />    
                             {/* button className='buttons' id='addAccountButton'>Make a New Account!</button> */}
                             </div>
                             <div id='displayArea'>
@@ -88,6 +86,7 @@ class MyAccountComp extends React.Component {
                         </div>
                     </div>
                     <div className='myAccountCards' id='myAccountCardsId'>
+                        <DisplayAccounts myAccounts={this.state.accountList}/>
                         {/* creat component that maps account list and renders */}
                     </div>
                 </div>
@@ -101,9 +100,17 @@ function NewAccountButton(props) {
                 <button className='buttons' id='addAccountButton' onClick={props.onClick}>Make a New Account!</button>
         );
 
-
-
 }
+
+
+function DisplayAccounts(props) {
+    console.log('display accounts');
+    // const myAccounts = this.state.accountList
+    const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toString()}> {account.name}</li>);
+    return <ul>{cardList}</ul>;
+}
+
+// put creat card function here
 
 
 
