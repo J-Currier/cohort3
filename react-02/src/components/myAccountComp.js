@@ -48,7 +48,10 @@ class MyAccountComp extends React.Component {
     handleBalanceChange(event) {
         this.setState({accountBalance: event.target.value});
     }
-
+    
+    depositFunction(event) {
+        console.log( "depositclicked", event.target.id)
+    }
 
 
     render() {
@@ -80,7 +83,7 @@ class MyAccountComp extends React.Component {
                         </div>
                     </div>
                     <div className='myAccountCards' id='myAccountCardsId'>
-                        <DisplayAccounts myAccounts={this.state.accountList}/>
+                        <DisplayAccounts myAccounts={this.state.accountList} onDeposit ={this.depositFunction} onWithDrawl={this.withdrawlFunction} onDelete={this.deleteFunction}/>
                     </div>
                 </div>
             </div>
@@ -97,83 +100,27 @@ function NewAccountButton(props) {
 
 
 function DisplayAccounts(props) {
-const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toString()}> {CreateNewCardFunction(account)}</li>);
+const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toString()}> {CreateNewCardFunction(account, props)}</li>);
     return <ul className="unstyled">{cardList}</ul>;
 }
 
-function CreateNewCardFunction(account) {
+function CreateNewCardFunction(account, props) {
 
-    let currencyBalance = parseFloat(account.balance);
-    
     return (
         
         <div className="cards" id={account.name} key={account.uniqueID} >
             <div className='accountCardHeader' >{account.name}</div>
             <div className='accountCardBalance'>Your balance is ${account.balance}</div>
-            <div className="amountInput" > input feild here</div>
-            <button className='buttons' value='deposit'>Deposit</button>
-            <button className='buttons' value='withdraw'>Withdraw</button>
-            <button className='buttons' value='delete'>DELETE ACCOUNT</button>
+            <div className="amountInput" > input field here</div>
+            <button className='buttons' id={account.uniqueID} onClick={props.onDeposit} value='deposit'>Deposit</button>
+            <button className='buttons' id={account.uniqueID} onClick={props.onWithdrawl} value='withdraw'>Withdraw</button>
+            <button className='buttons' id={account.uniqueID} onClick={props.onDelete} value='delete'>DELETE ACCOUNT</button>
 
 
         </div>
     )
 
-    
-
-// //     const newAccountCard = document.createElement('div');
-// //     newAccountCard.setAttribute('class', 'cards');
-// //     newAccountCard.setAttribute('id', newAccountName);
-// //     newAccountCard.setAttribute('key', counter);
-// //     console.log(newAccountCard);
-
-// //     let titleDiv = document.createElement('div');
-// //     titleDiv.setAttribute('class', 'accountCardHeader')
-// //     let newId = newAccountName + 'Title';
-// //     titleDiv.setAttribute('id', newId);
-// //     titleDiv.innerHTML = newAccountName;
-// //     newAccountCard.appendChild(titleDiv);
-
-// //     let balanceDiv = document.createElement('div');
-// //     balanceDiv.setAttribute('class', 'accountCardBalance')
-// //     let newBalId = newAccountName + 'Balance';
-// //     balanceDiv.setAttribute('id', newBalId);
-// //     balanceDiv.innerHTML = `Your balance is $${currencyBalance}`;
-// //     newAccountCard.appendChild(balanceDiv);
-
-//     let inputField = document.createElement('input');
-//     inputField.setAttribute('class', 'amountInput');
-//     inputField.setAttribute('type', 'text')
-
-//     let newInputId = newAccountName + 'input';
-//     inputField.setAttribute('id', newInputId);
-//     inputField.setAttribute('placeholder', 'enter amount');
-//     newAccountCard.appendChild(inputField);
-
-// //     let brTag = document.createElement('br');
-// //     newAccountCard.appendChild(brTag);
-
-// //     let depositbutton = document.createElement('button');
-// //     depositbutton.setAttribute('class', 'buttons');
-// //     depositbutton.innerHTML = 'Deposit';
-// //     depositbutton.value = 'deposit';
-// //     newAccountCard.appendChild(depositbutton);
-
-
-// //     let withdrawbutton = document.createElement('button');
-// //     withdrawbutton.setAttribute('class', 'buttons');
-// //     withdrawbutton.innerHTML = 'Withdraw';
-// //     withdrawbutton.value = 'withdraw';
-// //     newAccountCard.appendChild(withdrawbutton);
-
-// //     let deletebutton = document.createElement('button');
-// //     deletebutton.setAttribute('class', 'buttons');
-// //     deletebutton.innerHTML = 'DELETE';
-// //     deletebutton.value = 'delete';
-// //     newAccountCard.appendChild(deletebutton);
-
-// //     return newAccountCard;
-// },
+ 
 
     }
 
