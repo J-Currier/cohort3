@@ -51,8 +51,18 @@ class MyAccountComp extends React.Component {
     
     depositFunction(event) {
         console.log( "depositclicked", event.target.id)
+
     }
 
+    withdrawlFunction(event) {
+        console.log( "withdrawclicked", event.target.id)
+        
+    }
+
+    deleteFunction(event) {
+        console.log( "deleteclicked", event.target.id)
+        
+    }
 
     render() {
         return (
@@ -61,6 +71,8 @@ class MyAccountComp extends React.Component {
                     <div className='myHeading'>Bank o' Jen
                     </div>
                     <div className='addAccountSection'>
+
+
                         <div className='addNewAccountCard'>
                                 To add a new account:<br />
                                 Give your new account a name 
@@ -83,7 +95,7 @@ class MyAccountComp extends React.Component {
                         </div>
                     </div>
                     <div className='myAccountCards' id='myAccountCardsId'>
-                        <DisplayAccounts myAccounts={this.state.accountList} onDeposit ={this.depositFunction} onWithDrawl={this.withdrawlFunction} onDelete={this.deleteFunction}/>
+                        <DisplayAccounts myAccounts={this.state.accountList} onDeposit ={this.depositFunction} onWithdrawl={this.withdrawlFunction} onDelete={this.deleteFunction}/>
                     </div>
                 </div>
             </div>
