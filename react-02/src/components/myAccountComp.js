@@ -88,10 +88,12 @@ class MyAccountComp extends React.Component {
     deleteFunction(event) {
         console.log( "deleteclicked", event.target.id)
         let cardKey = parseInt(event.target.value)
-        // let myAccountArr =this.state.accountList
-        let myAccountArr = this.state.accountList.filter((arr) => arr.uniqueID != cardKey);
+        let myAccountArr = this.state.accountList.filter((arr) => arr.uniqueID !== cardKey);
         this.setState({accountList: myAccountArr})
     }
+
+
+
 
     render() {
         return (
@@ -116,10 +118,10 @@ class MyAccountComp extends React.Component {
                             </div>
                             <div id='displayArea'>
                             <div id='textdisplay'>
+                                <AccountTotal accountList={this.state.accountList}/>
+                                <HighestBalance accountList={this.state.accountList}/>
+                                <LowestBalance accountList={this.state.accountList} />
                             </div>
-                            <button className='buttons' id='highestAccount'>Highest Balance</button>
-                            <button className='buttons' id='lowestAccount'>Lowest Balance</button>
-                            <button className='buttons' id='sumAccount'>Account Total</button>
                             </div>
                         </div>
                     </div>
@@ -162,9 +164,41 @@ function CreateNewCardFunction(account, props) {
         </div>
     )
 
- 
+     }
 
-    }
+function HighestBalance(props) {
+    console.log(props.accountList)
+    if (props.accountList.length > 0) {
+    let highestValue = Math.max.apply(Math, props.accountList.map(function(param){return param.balance;}));
+    let highestAccount = props.accountList.find(function(param){ return param.balance == highestValue; });
+    return (
+        <div>Your <b>{highestAccount.name}</b> account is your largest asset with a balance of <b>${highestAccount.balance}</b></div>
+    );
+    }  else {return null }
+}
 
+function LowestBalance(props) {
+    console.log(props.accountList)
+    if (props.accountList.length > 1) {
+    let lowestValue = Math.min.apply(Math, props.accountList.map(function(param){return param.balance;}));
+    let lowestAccount = props.accountList.find(function(param){ return param.balance == lowestValue; });
+    return (
+        <div>Your <b>{lowestAccount.name}</b> account is your smallest asset with a balance of <b>${lowestAccount.balance}</b></div>
+    );
+    }  else {return null }
+}
 
+function AccountTotal(props) {
+    if (props.accountList.length > 0) {
+        let myArr = [];
+        props.accountList.forEach((element) => {
+            myArr.push(element.balance);
+            return myArr;
+        });
+        let accountTotals= myArr.reduce((acc, cur) => acc + cur);
+        return (
+            <div>The sum of your accounts is <b>${accountTotals}</b></div>
+        )} else { return null}
+
+}
 export default MyAccountComp
