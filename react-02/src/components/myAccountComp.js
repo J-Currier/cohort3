@@ -52,6 +52,18 @@ class MyAccountComp extends React.Component {
     depositFunction(event) {
         console.log( "depositclicked", event.target.id)
 
+        
+        // if (event.target.value == 'deposit') {
+        //     let amount = parseFloat(event.target.parentNode.children[2].value);
+        //     let accountArr = newUser.accountList.map(function(param){return param.key;});  
+        //     let index = accountArr.indexOf(accountKey);
+        //     newUser.accountList[index].deposit(amount);
+        //     console.log('new balance', newUser.accountList[index].balance);
+        //     let newBalance = newUser.accountList[index].balance.toFixed(2)
+        //     event.target.parentNode.children[1].innerHTML = `Your balance is $${newBalance}`;
+        // };
+    
+
     }
 
     withdrawlFunction(event) {
