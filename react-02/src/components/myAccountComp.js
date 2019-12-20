@@ -13,9 +13,12 @@ class MyAccountComp extends React.Component {
         counter: 0,
         accountName: '',
         accountBalance: '',
+        updateBalance:'',
       };
       this.handleNameChange = this.handleNameChange.bind(this);
       this.handleBalanceChange = this.handleBalanceChange.bind(this);
+      this.handleDepWith = this.handleDepWith.bind(this);
+      this.depositFunction = this.depositFunction.bind(this);
 
 
       
@@ -48,12 +51,19 @@ class MyAccountComp extends React.Component {
     handleBalanceChange(event) {
         this.setState({accountBalance: event.target.value});
     }
+
+    handleDepWith(event) {
+        console.log(event.target.value)
+        this.setState({updateBalance: event.target.value})
+    }
     
     depositFunction(event) {
         console.log( "depositclicked", event.target.id)
 
+        // let inputSearch = event.target.id + 'input';
+        console.log(this.state.updateBalance);
+
         
-        // if (event.target.value == 'deposit') {
         //     let amount = parseFloat(event.target.parentNode.children[2].value);
         //     let accountArr = newUser.accountList.map(function(param){return param.key;});  
         //     let index = accountArr.indexOf(accountKey);
@@ -95,7 +105,7 @@ class MyAccountComp extends React.Component {
                                 <br />
                             <div className='buttonDiv'>
                             
-                            <NewAccountButton onClick={() => this.createNewAccount()} />    
+                            <NewAccountButton onClick={() => this.createNewAccount()}  />    
                             </div>
                             <div id='displayArea'>
                             <div id='textdisplay'>
@@ -107,7 +117,7 @@ class MyAccountComp extends React.Component {
                         </div>
                     </div>
                     <div className='myAccountCards' id='myAccountCardsId'>
-                        <DisplayAccounts myAccounts={this.state.accountList} onDeposit ={this.depositFunction} onWithdrawl={this.withdrawlFunction} onDelete={this.deleteFunction}/>
+                        <DisplayAccounts myAccounts={this.state.accountList} onChange={this.handleDepWith} onDeposit ={this.depositFunction} onWithdrawl={this.withdrawlFunction} onDelete={this.deleteFunction}/>
                     </div>
                 </div>
             </div>
@@ -130,12 +140,14 @@ const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toS
 
 function CreateNewCardFunction(account, props) {
 
+    let inputID = account.uniqueID + 'input'
+
     return (
         
         <div className="cards" id={account.name} key={account.uniqueID} >
             <div className='accountCardHeader' >{account.name}</div>
             <div className='accountCardBalance'>Your balance is ${account.balance}</div>
-            <div className="amountInput" > input field here</div>
+            <input className="amountInput" type="text" onChange={props.onChange} id={inputID}/>
             <button className='buttons' id={account.uniqueID} onClick={props.onDeposit} value='deposit'>Deposit</button>
             <button className='buttons' id={account.uniqueID} onClick={props.onWithdrawl} value='withdraw'>Withdraw</button>
             <button className='buttons' id={account.uniqueID} onClick={props.onDelete} value='delete'>DELETE ACCOUNT</button>
