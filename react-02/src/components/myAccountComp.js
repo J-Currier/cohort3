@@ -19,6 +19,9 @@ class MyAccountComp extends React.Component {
       this.handleBalanceChange = this.handleBalanceChange.bind(this);
       this.handleDepWith = this.handleDepWith.bind(this);
       this.depositFunction = this.depositFunction.bind(this);
+      this.withdrawlFunction = this.withdrawlFunction.bind(this);
+      this.deleteFunction = this.deleteFunction.bind(this);
+
 
 
       
@@ -58,32 +61,36 @@ class MyAccountComp extends React.Component {
     }
     
     depositFunction(event) {
-        console.log( "depositclicked", event.target.id)
-
-        // let inputSearch = event.target.id + 'input';
-        console.log(this.state.updateBalance);
-
-        
-        //     let amount = parseFloat(event.target.parentNode.children[2].value);
-        //     let accountArr = newUser.accountList.map(function(param){return param.key;});  
-        //     let index = accountArr.indexOf(accountKey);
-        //     newUser.accountList[index].deposit(amount);
-        //     console.log('new balance', newUser.accountList[index].balance);
-        //     let newBalance = newUser.accountList[index].balance.toFixed(2)
-        //     event.target.parentNode.children[1].innerHTML = `Your balance is $${newBalance}`;
-        // };
-    
-
+        console.log('depositclicked')
+        let cardKey = parseInt(event.target.value)
+        let accountArr = this.state.accountList.map(function(param){return param.uniqueID;});  
+        let index = accountArr.indexOf(cardKey);
+        console.log(index, 'index')
+        let newBalance = (parseInt(this.state.accountList[index].balance) + parseInt(this.state.updateBalance)).toFixed(2);
+        let myAccountArr = this.state.accountList;
+        myAccountArr[index].balance = newBalance;
+        this.setState({accountList: myAccountArr})
     }
 
     withdrawlFunction(event) {
-        console.log( "withdrawclicked", event.target.id)
+        console.log('withdrawl clicked');
+        let cardKey = parseInt(event.target.value)
+        let accountArr = this.state.accountList.map(function(param){return param.uniqueID;});  
+        let index = accountArr.indexOf(cardKey);
+        console.log(index, 'index')
+        let newBalance = (parseInt(this.state.accountList[index].balance) - parseInt(this.state.updateBalance)).toFixed(2);
+        let myAccountArr = this.state.accountList;
+        myAccountArr[index].balance = newBalance;
+        this.setState({accountList: myAccountArr})
         
     }
 
     deleteFunction(event) {
         console.log( "deleteclicked", event.target.id)
-        
+        let cardKey = parseInt(event.target.value)
+        // let myAccountArr =this.state.accountList
+        let myAccountArr = this.state.accountList.filter((arr) => arr.uniqueID != cardKey);
+        this.setState({accountList: myAccountArr})
     }
 
     render() {
@@ -140,17 +147,16 @@ const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toS
 
 function CreateNewCardFunction(account, props) {
 
-    let inputID = account.uniqueID + 'input'
 
     return (
         
         <div className="cards" id={account.name} key={account.uniqueID} >
             <div className='accountCardHeader' >{account.name}</div>
             <div className='accountCardBalance'>Your balance is ${account.balance}</div>
-            <input className="amountInput" type="text" onChange={props.onChange} id={inputID}/>
-            <button className='buttons' id={account.uniqueID} onClick={props.onDeposit} value='deposit'>Deposit</button>
-            <button className='buttons' id={account.uniqueID} onClick={props.onWithdrawl} value='withdraw'>Withdraw</button>
-            <button className='buttons' id={account.uniqueID} onClick={props.onDelete} value='delete'>DELETE ACCOUNT</button>
+            <input className="amountInput" type="text" onChange={props.onChange}/>
+            <button className='buttons' value={account.uniqueID} onClick={props.onDeposit} >Deposit</button>
+            <button className='buttons' value={account.uniqueID} onClick={props.onWithdrawl} >Withdraw</button>
+            <button className='buttons' value={account.uniqueID} onClick={props.onDelete} >DELETE ACCOUNT</button>
 
 
         </div>
