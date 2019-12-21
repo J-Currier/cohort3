@@ -12,7 +12,7 @@ class MyAccountComp extends React.Component {
         accountList: [],
         counter: 0,
         accountName: '',
-        accountBalance: '',
+        accountBalance: 0,
         updateBalance:'',
       };
       this.handleNameChange = this.handleNameChange.bind(this);
@@ -28,56 +28,79 @@ class MyAccountComp extends React.Component {
     } 
 
     createNewAccount() {
-        // creat a for loop to check for same named account
-
-        let myNewAccount = {
-            name: this.state.accountName,
-            balance: parseFloat(this.state.accountBalance).toFixed(2),
-            uniqueID: this.state.counter
+        let nameList = this.state.accountList.map(function(param){return param.name;});
+        if (isNaN(this.state.accountBalance) || this.state.accountBalance.length < 1 ) {
+            alert('Please enter a valid balance')
+            return null
         }
 
-        this.setState({
-           accountList: this.state.accountList.concat(myNewAccount),
-           counter: this.state.counter +1,
-        });
-        this.setState({
-            accountName: '',
-            accountBalance: '',
-        });
 
-    }
+        
+        if (this.state.accountName === '') {
+            alert("Please use a valid account name");
+            return null
+        } 
+        if (this.state.accountList.length > 0 && nameList.indexOf(this.state.accountName) >= 0) {
+                alert("That account name is already in use, please choose another");
+                return null
+            
+        } else {
+            let myNewAccount = {
+                name: this.state.accountName,
+                balance: parseFloat(this.state.accountBalance).toFixed(2),
+                uniqueID: this.state.counter
+            }
+    
+            this.setState({
+                accountList: this.state.accountList.concat(myNewAccount),
+                counter: this.state.counter +1,
+            });
+            this.setState({
+                accountName: '',
+                accountBalance: 0,
+            });
+        
+        }
+        
+}
 
     handleNameChange(event) {
         this.setState({accountName: event.target.value});
     }
 
     handleBalanceChange(event) {
-        this.setState({accountBalance: event.target.value});
+        let newBalance = parseFloat(event.target.value)
+        this.setState({accountBalance: newBalance });
     }
 
     handleDepWith(event) {
-        console.log(event.target.value)
         this.setState({updateBalance: event.target.value})
     }
     
     depositFunction(event) {
-        console.log('depositclicked')
+        if (isNaN(event.target.parentNode.children[2].value) || event.target.parentNode.children[2].value.length === 0 ) {
+            alert('Please enter a valid amount to deposit')
+            return null
+        }
         let cardKey = parseInt(event.target.value)
         let accountArr = this.state.accountList.map(function(param){return param.uniqueID;});  
         let index = accountArr.indexOf(cardKey);
-        console.log(index, 'index')
-        let newBalance = (parseInt(this.state.accountList[index].balance) + parseInt(this.state.updateBalance)).toFixed(2);
+        let newBalance = (parseInt(this.state.accountList[index].balance) + parseInt(event.target.parentNode.children[2].value)).toFixed(2);
         let myAccountArr = this.state.accountList;
         myAccountArr[index].balance = newBalance;
         this.setState({accountList: myAccountArr})
+        event.target.parentNode.children[2].value = 0;
     }
 
     withdrawlFunction(event) {
-        console.log('withdrawl clicked');
+        if (isNaN(event.target.parentNode.children[2].value) || event.target.parentNode.children[2].value.length === 0 ) {
+            alert('Please enter a valid amount to withdraw')
+            return null
+        }
+
         let cardKey = parseInt(event.target.value)
         let accountArr = this.state.accountList.map(function(param){return param.uniqueID;});  
         let index = accountArr.indexOf(cardKey);
-        console.log(index, 'index')
         let newBalance = (parseInt(this.state.accountList[index].balance) - parseInt(this.state.updateBalance)).toFixed(2);
         let myAccountArr = this.state.accountList;
         myAccountArr[index].balance = newBalance;
@@ -86,7 +109,6 @@ class MyAccountComp extends React.Component {
     }
 
     deleteFunction(event) {
-        console.log( "deleteclicked", event.target.id)
         let cardKey = parseInt(event.target.value)
         let myAccountArr = this.state.accountList.filter((arr) => arr.uniqueID !== cardKey);
         this.setState({accountList: myAccountArr})
@@ -167,10 +189,9 @@ function CreateNewCardFunction(account, props) {
      }
 
 function HighestBalance(props) {
-    console.log(props.accountList)
     if (props.accountList.length > 0) {
     let highestValue = Math.max.apply(Math, props.accountList.map(function(param){return param.balance;}));
-    let highestAccount = props.accountList.find(function(param){ return param.balance == highestValue; });
+    let highestAccount = props.accountList.find(function(param){ return parseFloat(param.balance) === highestValue; });
     return (
         <div>Your <b>{highestAccount.name}</b> account is your largest asset with a balance of <b>${highestAccount.balance}</b></div>
     );
@@ -178,10 +199,9 @@ function HighestBalance(props) {
 }
 
 function LowestBalance(props) {
-    console.log(props.accountList)
     if (props.accountList.length > 1) {
     let lowestValue = Math.min.apply(Math, props.accountList.map(function(param){return param.balance;}));
-    let lowestAccount = props.accountList.find(function(param){ return param.balance == lowestValue; });
+    let lowestAccount = props.accountList.find(function(param){ return parseFloat(param.balance) === lowestValue; });
     return (
         <div>Your <b>{lowestAccount.name}</b> account is your smallest asset with a balance of <b>${lowestAccount.balance}</b></div>
     );
