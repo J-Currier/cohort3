@@ -33,7 +33,7 @@ class PawprintIcon extends React.Component {
           </div>
 
           <div> 
-            {/* <MyCitiesComp /> */}
+            <MyCitiesComp />
           </div>
         </div>
       )
@@ -148,109 +148,109 @@ class MyCitiesComp extends React.Component {
       this.setState({citiesList: mycityArr})
   }
 
-//   render() {
-//       return (
-//           <div className="App-header">
-//               <div className='accountsDiv'>
-//                   <div className='myHeading'>Bank o' Jen
-//                   </div>
-//                   <div className='addAccountSection'>
+  render() {
+      return (
+          <div className="App-header">
+              <div className='accountsDiv'>
+                  <div className='myHeading'>Communities
+                  </div>
+                  <div className='addAccountSection'>
 
 
-//                       <div className='addNewAccountCard'>
-//                               To add a new account:<br />
-//                               Give your new account a name 
-//                               <input type="text" value={this.state.cityName} onChange={this.handleNameChange} />
-//                               <br />
-//                               Enter the starting balance   <br /> 
-//                               $<input type="text" value={this.state.cityPop} onChange={this.handlePopChange} />
-//                               <br />
-//                           <div className='buttonDiv'>
+                      <div className='addNewAccountCard'>
+                              To add a new city:<br />
+                              Give your new city a name 
+                              <input type="text" value={this.state.cityName} onChange={this.handleNameChange} />
+                              <br />
+                              Enter the starting population  <br /> 
+                              <input type="text" value={this.state.cityPop} onChange={this.handlePopChange} />
+                              <br />
+                          <div className='buttonDiv'>
                           
-//                           <NewAccountButton onClick={() => this.createNewCity()}  />    
-//                           </div>
-//                           <div id='displayArea'>
-//                           <div id='textdisplay'>
-//                               <AccountTotal citiesList={this.state.citiesList}/>
-//                               <HighestBalance citiesList={this.state.citiesList}/>
-//                               <LowestBalance citiesList={this.state.citiesList} />
-//                           </div>
-//                           </div>
-//                       </div>
-//                   </div>
-//                   <div className='myAccountCards' id='myAccountCardsId'>
-//                       <DisplayAccounts myAccounts={this.state.citiesList} onChange={this.handleMoveInOut} onDeposit ={this.moveInFunction} onWithdrawl={this.moveOutFunction} onDelete={this.deleteFunction}/>
-//                   </div>
-//               </div>
-//           </div>
-//       )} 
+                          <NewCityButton onClick={() => this.createNewCity()}  />    
+                          </div>
+                          <div id='displayArea'>
+                          <div id='textdisplay'>
+                              <PopulationTotal citiesList={this.state.citiesList}/>
+                              <HighestPopulation citiesList={this.state.citiesList}/>
+                              <LowestPopulation citiesList={this.state.citiesList} />
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div className='myAccountCards' id='myCityCardsId'>
+                      <DisplayCities myCities={this.state.citiesList} onChange={this.handleMoveInOut} onDeposit ={this.moveInFunction} onWithdrawl={this.moveOutFunction} onDelete={this.deleteFunction}/>
+                  </div>
+              </div>
+          </div>
+      )} 
 
-// }
+}
 
-// function NewAccountButton(props) { 
-//       return(
-//               <button className='buttons' id='addAccountButton' onClick={props.onClick}>Make a New Account!</button>
-//       );
+function NewCityButton(props) { 
+      return(
+              <button className='buttons' id='addCityButton' onClick={props.onClick}>Make a New City!</button>
+      );
 
-// }
-
-
-// function DisplayAccounts(props) {
-// const cardList = props.myAccounts.map((account) => <li key={account.uniqueID.toString()}> {CreateNewCardFunction(account, props)}</li>);
-//   return <ul className="unstyled">{cardList}</ul>;
-// }
-
-// function CreateNewCardFunction(account, props) {
+}
 
 
-//   return (
+function DisplayCities(props) {
+const cardList = props.myCities.map((city) => <li key={city.uniqueID.toString()}> {CreateNewCardFunction(city, props)}</li>);
+  return <ul className="unstyled">{cardList}</ul>;
+}
+
+function CreateNewCardFunction(city, props) {
+
+
+  return (
       
-//       <div className="cards" id={account.name} key={account.uniqueID} >
-//           <div className='accountCardHeader' >{account.name}</div>
-//           <div className='accountCardBalance'>Your balance is ${account.balance}</div>
-//           <input className="amountInput" type="text" onChange={props.onChange}/>
-//           <button className='buttons' value={account.uniqueID} onClick={props.onDeposit} >Deposit</button>
-//           <button className='buttons' value={account.uniqueID} onClick={props.onWithdrawl} >Withdraw</button>
-//           <button className='buttons' value={account.uniqueID} onClick={props.onDelete} >DELETE ACCOUNT</button>
+      <div className="cards" id={city.name} key={city.uniqueID} >
+          <div className='accountCardHeader' >{city.name}</div>
+          <div className='accountCardBalance'>Population: {city.population}</div>
+          <input className="amountInput" type="text" onChange={props.onChange}/>
+          <button className='buttons' value={city.uniqueID} onClick={props.onMoveIn} >Increase Population</button>
+          <button className='buttons' value={city.uniqueID} onClick={props.onMoveOut} >Decrease Population</button>
+          <button className='buttons' value={city.uniqueID} onClick={props.onDelete} >DELETE CITY</button>
 
 
-//       </div>
-//   )
+      </div>
+  )
 
-//    }
+   }
 
-// function HighestBalance(props) {
-//   if (props.citiesList.length > 0) {
-//   let highestValue = Math.max.apply(Math, props.citiesList.map(function(param){return param.balance;}));
-//   let highestAccount = props.citiesList.find(function(param){ return parseFloat(param.balance) === highestValue; });
-//   return (
-//       <div>Your <b>{highestAccount.name}</b> account is your largest asset with a balance of <b>${highestAccount.balance}</b></div>
-//   );
-//   }  else {return null }
-// }
+function HighestPopulation(props) {
+  if (props.citiesList.length > 0) {
+  let highestValue = Math.max.apply(Math, props.citiesList.map(function(param){return param.population;}));
+  let highestPopulation = props.citiesList.find(function(param){ return parseFloat(param.population) === highestValue; });
+  return (
+      <div> <b>{highestPopulation.name}</b> is the most populated with a population of <b>{highestPopulation.population}</b></div>
+  );
+  }  else {return null }
+}
 
-// function LowestBalance(props) {
-//   if (props.citiesList.length > 1) {
-//   let lowestValue = Math.min.apply(Math, props.citiesList.map(function(param){return param.balance;}));
-//   let lowestAccount = props.citiesList.find(function(param){ return parseFloat(param.balance) === lowestValue; });
-//   return (
-//       <div>Your <b>{lowestAccount.name}</b> account is your smallest asset with a balance of <b>${lowestAccount.balance}</b></div>
-//   );
-//   }  else {return null }
-// }
+function LowestPopulation(props) {
+  if (props.citiesList.length > 1) {
+  let lowestValue = Math.min.apply(Math, props.citiesList.map(function(param){return param.population;}));
+  let lowestPopulation = props.citiesList.find(function(param){ return parseFloat(param.population) === lowestValue; });
+  return (
+      <div> <b>{lowestPopulation.name}</b>  is the least populated city with a population of <b>{lowestPopulation.population}</b></div>
+  );
+  }  else {return null }
+}
 
-// function AccountTotal(props) {
-//   if (props.citiesList.length > 0) {
-//       let myArr = [];
-//       props.citiesList.forEach((element) => {
-//           myArr.push(element.balance);
-//           return myArr;
-//       });
-//       let accountTotals= myArr.reduce((acc, cur) => acc + cur);
-//       return (
-//           <div>The sum of your accounts is <b>${accountTotals}</b></div>
-//       )} else { return null}
+function PopulationTotal(props) {
+  if (props.citiesList.length > 0) {
+      let myArr = [];
+      props.citiesList.forEach((element) => {
+          myArr.push(element.population);
+          return myArr;
+      });
+      let PopulationTotals= myArr.reduce((acc, cur) => acc + cur);
+      return (
+          <div>The total population of your community is <b>{PopulationTotals}</b></div>
+      )} else { return null}
 
-// }
+}
 
 export default PawprintIcon;
