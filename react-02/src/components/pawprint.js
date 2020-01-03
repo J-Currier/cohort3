@@ -51,10 +51,14 @@ class MyCitiesComp extends React.Component {
       counter: 0,
       cityName: '',
       cityPop: 0,
+      cityLat: 0,
+      cityLong:0,
       updatePop:'',
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handlePopChange = this.handlePopChange.bind(this);
+    this.handleLatChange = this.handleLatChange.bind(this);
+    this.handleLongChange = this.handleLongChange.bind(this);
     this.handleMoveInOut = this.handleMoveInOut.bind(this);
     this.moveInFunction = this.moveInFunction.bind(this);
     this.moveOutFunction = this.moveOutFunction.bind(this);
@@ -80,11 +84,12 @@ class MyCitiesComp extends React.Component {
               return null
           
       } else {
-        // *******add in lat and long******
           let myNewCity = {
               name: this.state.cityName,
               population: parseInt(this.state.cityPop),
-              uniqueID: this.state.counter
+              uniqueID: this.state.counter,
+              latitude: parseInt(this.state.cityLat),
+              longitude: parseInt(this.state.cityLong)
           }
   
           this.setState({
@@ -94,6 +99,8 @@ class MyCitiesComp extends React.Component {
           this.setState({
               cityName: '',
               cityPop: 0,
+              cityLat: 0,
+              cityLong:0
           });
       }
 }
@@ -101,6 +108,15 @@ class MyCitiesComp extends React.Component {
   handleNameChange(event) {
       this.setState({cityName: event.target.value});
   }
+
+  handleLatChange(event) {
+    this.setState({cityLat: event.target.value});
+}
+
+  handleLongChange(event) {
+    this.setState({cityLong: event.target.value});
+}
+
 
   handlePopChange(event) {
       let newPop = parseFloat(event.target.value)
@@ -112,22 +128,23 @@ class MyCitiesComp extends React.Component {
   }
   
   moveInFunction(event) {
-      if (isNaN(event.target.parentNode.children[2].value) || event.target.parentNode.children[2].value.length === 0 ) {
+      console.log("move in function");
+      if (isNaN(event.target.parentNode.children[3].value) || event.target.parentNode.children[3].value.length === 0 ) {
           alert('Please enter a valid number')
           return null
       }
       let cardKey = parseInt(event.target.value)
       let cityArr = this.state.citiesList.map(function(param){return param.uniqueID;});  
       let index = cityArr.indexOf(cardKey);
-      let newPop = (parseInt(this.state.citiesList[index].population) + parseInt(event.target.parentNode.children[2].value));
+      let newPop = (parseInt(this.state.citiesList[index].population) + parseInt(event.target.parentNode.children[3].value));
       let mycityArr = this.state.citiesList;
       mycityArr[index].population = newPop;
       this.setState({citiesList: mycityArr})
-      event.target.parentNode.children[2].value = 0;
+      event.target.parentNode.children[3].value = 0;
   }
 
   moveOutFunction(event) {
-      if (isNaN(event.target.parentNode.children[2].value) || event.target.parentNode.children[2].value.length === 0 ) {
+      if (isNaN(event.target.parentNode.children[3].value) || event.target.parentNode.children[3].value.length === 0 ) {
           alert('Please enter a valid number')
           return null
       }
@@ -165,6 +182,13 @@ class MyCitiesComp extends React.Component {
                               Enter the starting population  <br /> 
                               <input type="text" value={this.state.cityPop} onChange={this.handlePopChange} />
                               <br />
+                              Enter the latitude  <br /> 
+                              <input type="text" value={this.state.cityLat} onChange={this.handleLatChange} />
+                              <br />
+                              Enter the longitude  <br /> 
+                              <input type="text" value={this.state.cityLong} onChange={this.handleLongChange} />
+                              <br />
+
                           <div className='buttonDiv'>
                           
                           <NewCityButton onClick={() => this.createNewCity()}  />    
@@ -172,14 +196,14 @@ class MyCitiesComp extends React.Component {
                           <div id='displayArea'>
                           <div id='textdisplay'>
                               <PopulationTotal citiesList={this.state.citiesList}/>
-                              <HighestPopulation citiesList={this.state.citiesList}/>
-                              <LowestPopulation citiesList={this.state.citiesList} />
+                              <MostNorthern citiesList={this.state.citiesList}/>
+                              <MostSouthern citiesList={this.state.citiesList} />
                           </div>
                           </div>
                       </div>
                   </div>
                   <div className='myAccountCards' id='myCityCardsId'>
-                      <DisplayCities myCities={this.state.citiesList} onChange={this.handleMoveInOut} onDeposit ={this.moveInFunction} onWithdrawl={this.moveOutFunction} onDelete={this.deleteFunction}/>
+                      <DisplayCities myCities={this.state.citiesList} onChange={this.handleMoveInOut} onMoveIn ={this.moveInFunction} onMoveOut={this.moveOutFunction} onDelete={this.deleteFunction}/>
                   </div>
               </div>
           </div>
@@ -208,6 +232,7 @@ function CreateNewCardFunction(city, props) {
       <div className="cards" id={city.name} key={city.uniqueID} >
           <div className='accountCardHeader' >{city.name}</div>
           <div className='accountCardBalance'>Population: {city.population}</div>
+          <div className='accountCardBalance'>Location: {city.latitude}, {city.longitude}</div>
           <input className="amountInput" type="text" onChange={props.onChange}/>
           <button className='buttons' value={city.uniqueID} onClick={props.onMoveIn} >Increase Population</button>
           <button className='buttons' value={city.uniqueID} onClick={props.onMoveOut} >Decrease Population</button>
@@ -219,22 +244,22 @@ function CreateNewCardFunction(city, props) {
 
    }
 
-function HighestPopulation(props) {
-  if (props.citiesList.length > 0) {
-  let highestValue = Math.max.apply(Math, props.citiesList.map(function(param){return param.population;}));
-  let highestPopulation = props.citiesList.find(function(param){ return parseFloat(param.population) === highestValue; });
+function MostNorthern(props) {
+  if (props.citiesList.length > 1) {
+  let highestValue = Math.max.apply(Math, props.citiesList.map(function(param){return param.latitude;}));
+  let mostNorthernly = props.citiesList.find(function(param){ return parseFloat(param.latitude) === highestValue; });
   return (
-      <div> <b>{highestPopulation.name}</b> is the most populated with a population of <b>{highestPopulation.population}</b></div>
+      <div> <b>{mostNorthernly.name}</b> is the most northern city</div>
   );
   }  else {return null }
 }
 
-function LowestPopulation(props) {
+function MostSouthern(props) {
   if (props.citiesList.length > 1) {
-  let lowestValue = Math.min.apply(Math, props.citiesList.map(function(param){return param.population;}));
-  let lowestPopulation = props.citiesList.find(function(param){ return parseFloat(param.population) === lowestValue; });
+  let lowestValue = Math.min.apply(Math, props.citiesList.map(function(param){return param.latitude;}));
+  let mostSouthernly = props.citiesList.find(function(param){ return parseFloat(param.latitude) === lowestValue; });
   return (
-      <div> <b>{lowestPopulation.name}</b>  is the least populated city with a population of <b>{lowestPopulation.population}</b></div>
+      <div> <b>{mostSouthernly.name}</b>  is the most southern city</div>
   );
   }  else {return null }
 }
