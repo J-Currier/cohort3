@@ -27,7 +27,7 @@ const serverFunctions = {
         return json;
     },
     async loadData(newComm) {
-        console.log("load finc");
+        console.log("load func");
             try {
                 console.log('fisrt after try');
                 let myData = await this.postData(url + 'all');

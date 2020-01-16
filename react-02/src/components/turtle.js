@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bonfire from './bonfire.svg';
 import compass from './compass.svg';
 import fox from './fox.svg';
@@ -38,6 +38,8 @@ class TurtleIcon extends React.Component {
             <h2>Why turtles?</h2>
             because I can
             <img src={seaTurtle} className="turtle-logo" alt="logo" />
+            
+            <Example />
             <p>
               Edit <code>src/App.js</code> and save to reload.
             </p>
@@ -54,5 +56,18 @@ class TurtleIcon extends React.Component {
       )
     };
 };
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
 
 export default TurtleIcon;
