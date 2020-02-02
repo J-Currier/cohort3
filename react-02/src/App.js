@@ -4,6 +4,7 @@ import CompassIcon from './components/compass';
 import FoxIcon from './components/fox';
 import PawprintIcon from './components/pawprint';
 import TurtleIcon from './components/turtle';
+import './App.css';
 
 
 

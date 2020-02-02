@@ -4,7 +4,7 @@ import compass from './compass.svg';
 import fox from './fox.svg';
 import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
-import 'C:/Code/cohort3/react-02/src/App.css';
+import 'C:/Users/Dustin/cohort3/react-02/src/App.js';
 
 
 class PawprintIcon extends React.Component { 
