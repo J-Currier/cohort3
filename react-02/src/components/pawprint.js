@@ -5,6 +5,7 @@ import fox from './fox.svg';
 import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
 import 'C:/Users/Dustin/cohort3/react-02/src/App.js';
+import serverFunctions from './cityserverfunctions.js';
 
 
 class PawprintIcon extends React.Component { 
@@ -66,9 +67,9 @@ class MyCitiesComp extends React.Component {
 
   } 
 
-  // componentDidMount() {
-  //   <CityServerFunctions createNewCity={this.createNewCity}/>
-  // }
+  componentDidMount() {
+    <CityServerFunctions createNewCity={this.createNewCity}/>
+  }
 
   createNewCity() {
       let nameList = this.state.citiesList.map(function(param){return param.name;});

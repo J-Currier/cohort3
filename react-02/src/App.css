@@ -126,6 +126,7 @@
 /* vvvvvvvvvvv   tictactoe css   vvvvvvvvvvv */
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
+  color: #FFFFFF;
   margin: 20px;
 }
 
@@ -145,7 +146,7 @@ ol, ul {
 
 .square {
   background: rgb(121,113,243);
-  background: radial-gradient(circle, rgba(121,113,243,1) 0%, rgba(148,187,233,1) 100%);  font-weight: bold;
+  background: radial-gradient(circle, #BFE1FF 0%, #87C7FF 100%);  font-weight: bold;
   border: 3px solid black;
   float: left;
   font-size: 100px;
