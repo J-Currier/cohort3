@@ -1,5 +1,5 @@
 {
-    "name": "jest-p2", 
+    "name": "jest-p2",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -11,7 +11,6 @@
         "testfile": "jest src/01-getting-started/scripts/lfsplay.test.js",
         "jc": "jest src/JavaScript/Daily/daily.test.js"
     },
-
     "keywords": [],
     "author": "",
     "license": "ISC",
