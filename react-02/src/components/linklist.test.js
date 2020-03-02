@@ -20,6 +20,7 @@ test('LinkedList', () => {
     expect(myLinkedList.last()).toBe(Node2);
     expect(myLinkedList.previous(myLinkedList.current)).toBe(myNewNode);
     expect(myLinkedList.next(myLinkedList.current)).toBe(Node2);
+    expect(myLinkedList.total()).toBe(10);
     
 });
 

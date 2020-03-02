@@ -1,5 +1,5 @@
 import React from 'react';
-import 'C:/Users/Dustin/cohort3/react-02/src/App.js';
+import 'C:/code/cohort3/react-02/src/App.css';
 
 
 

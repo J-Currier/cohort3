@@ -37,6 +37,7 @@
   font-size: calc(10px + 2vmin);
   color: black;
   padding-top: 40px;
+  width: 100%;
 }
 
 .turtle-App-header {
@@ -47,8 +48,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  background-image: url("C:\Users\Dustin\cohort3\react-02\src\components\ocean.jpg");
+  color:white;
+  background-image: url("C:\code\cohort3\react-02\src\components\ocean.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -211,6 +212,9 @@ ol, ul {
     padding: 20px;
     font-size: 1.5em;
     line-height: 1.7;
+    border-radius:19px;
+    width: 100%;
+
 }
 
 .addNewAccountCard {

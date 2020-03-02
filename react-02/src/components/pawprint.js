@@ -4,7 +4,7 @@ import compass from './compass.svg';
 import fox from './fox.svg';
 import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
-import 'C:/Users/Dustin/cohort3/react-02/src/App.js';
+import 'C:/code/cohort3/react-02/src/App.css';
 import serverFunctions from './cityserverfunctions.js';
 
 
@@ -68,7 +68,7 @@ class MyCitiesComp extends React.Component {
   } 
 
   componentDidMount() {
-    <CityServerFunctions createNewCity={this.createNewCity}/>
+    // <CityServerFunctions createNewCity={this.createNewCity}/>
   }
 
   createNewCity() {
