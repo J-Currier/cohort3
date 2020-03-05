@@ -6,35 +6,11 @@ import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
 import 'C:/code/cohort3/react-02/src/App.css';
 import seaTurtle from './seaTurtle.svg'
+import LinkedListComp from './linkedListComp.js';
 
 
 class TurtleIcon extends React.Component { 
-  constructor(props) {
-    super(props);
-    this.id= 'turtle Button'
-    this.state = {
-      isCardView: true,
-      itemName: '',
-      itemAmount:'',
-    };
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleAmountChange = this.handleAmountChange.bind(this);
-    this.addNewNode = this.addNewNode.bind(this);
-
-  };
-
-
-
-  handleNameChange(event) {
-      this.setState({itemName: event.target.value});
-  }
-  handleAmountChange(event) {
-    this.setState({itemAmount: event.target.value});
-  }
-  addNewNode(event) {
-    console.log('I was clicked')
-    console.log(this.state.itemName, this.state.itemAmount);
-  }
+  
 
 
 
@@ -54,25 +30,7 @@ class TurtleIcon extends React.Component {
             <div>Turtles!</div>
           </div>
 
-          <div className="linkedListComp">
-            <div className='myHeading'>
-              Linked List
-            </div>
-            <div className='addNewAccountCard'>
-              <div className='addAccountSection'>
-                Item:               
-                <input type="text" value={this.state.itemName} onChange={this.handleNameChange} />
-                Amount:                
-                <input type="number" value={this.state.itemAmount} onChange={this.handleAmountChange} />
-                <br/>
-                <button className='buttons' id='addNewNodeButton' onClick={this.addNewNode}>Add my item</button>
-              </div>
-            </div>
-            <div className='myAccountCards'>
-              My list will go here
-            </div>
-            
-          </div>
+          <LinkedListComp />
         </div>
       )
     };

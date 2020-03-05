@@ -138,7 +138,7 @@ export class LinkedList {
             else {
                 let newCurrentNode = newBackwardNode;
                 newCurrentNode.forwardNode = newForwardNode;
-                newNext.backwardNode = newCurrentNode;
+                newForwardNode.backwardNode = newCurrentNode;
                 this.current = newCurrentNode;
                 node = null;
                 return this.current;
