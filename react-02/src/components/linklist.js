@@ -1,3 +1,4 @@
+import LinkedListComp from "./linkedListComp";
 
 
 export class Node {
@@ -146,4 +147,5 @@ export class LinkedList {
         }
     }
 };
+export default LinkedList
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AppContext } from './contextMaker.js';
 import BonfireIcon from './components/bonfire';
 import CompassIcon from './components/compass';
 import FoxIcon from './components/fox';
@@ -9,6 +10,8 @@ import './App.css';
 
 
 class App extends React.Component {
+  static contextType = AppContext;
+
 
   constructor() {
     super();
