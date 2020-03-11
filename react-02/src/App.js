@@ -5,6 +5,7 @@ import CompassIcon from './components/compass';
 import FoxIcon from './components/fox';
 import PawprintIcon from './components/pawprint';
 import TurtleIcon from './components/turtle';
+import OwlIcon from './components/owl';
 import './App.css';
 
 
@@ -40,7 +41,10 @@ class App extends React.Component {
         return < PawprintIcon eventFunc={this.onSelect} />;
       } if (this.state.selected === 'turtle' ) {
         return < TurtleIcon eventFunc={this.onSelect} />;
+      } if (this.state.selected === 'owl' ) {
+        return < OwlIcon eventFunc={this.onSelect} />;
       }
+
     }
 
   render () {

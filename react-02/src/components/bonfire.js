@@ -5,6 +5,8 @@ import compass from './compass.svg';
 import fox from './fox.svg';
 import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
+import owl from './owl.svg';
+
 import 'C:/code/cohort3/react-02/src/App.css';
 // import './App.css';
 
@@ -31,11 +33,15 @@ class BonfireIcon extends React.Component {
             <input type="image" src={fox}  className="header-logo" id="fox" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={pawprint}  className="header-logo" id="pawprint" onClick={this.props.eventFunc} alt='homeButton'/>
             <input type="image" src={turtle}  className="header-logo" id="turtle" onClick={this.props.eventFunc} alt='homeButton'/>
+            <input type="image" src={owl}  className="header-logo" id="owl" onClick={this.props.eventFunc} alt='homeButton'/>
+
             <div>Home</div>
             <div>Tic Tac Toe</div>
             <div>Accounts</div>
             <div>Cities</div>
             <div>Turtles!</div>
+            <div>LIFO/FIFO</div>
+
 
           </div>
 

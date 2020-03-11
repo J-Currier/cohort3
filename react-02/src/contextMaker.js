@@ -9,7 +9,12 @@ export class ContextProvider extends React.Component {
     linkedList = new LinkedList();
 
     state = {
+        //linkedListStates
         current: '',
+        //LIFO/FIFO States
+        newestItem: '',
+        deletedItem: '',
+        LIFOFIFOList: [],
     };
 
     handleOnChange = (event) => {

@@ -72,7 +72,7 @@
   background-color: #536280;
   height: 120px;
   display: grid;
-  grid-template-columns: repeat(5, 2fr);
+  grid-template-columns: repeat(6, 2fr);
   justify-items: center;
 
 
