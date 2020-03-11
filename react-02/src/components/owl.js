@@ -5,6 +5,7 @@ import fox from './fox.svg';
 import pawprint from './paw-print.svg';
 import turtle from './turtle.svg';
 import owl from './owl.svg';
+import LifoFifoComp from './lifofifocomp.js';
 
 import 'C:/code/cohort3/react-02/src/App.css';
 
@@ -34,7 +35,7 @@ class OwlIcon extends React.Component {
 
           </div>
 my compontent will go here
-          {/* <LinkedListComp /> */}
+          <LifoFifoComp />
         </div>
       )
     };
